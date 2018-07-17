@@ -1,0 +1,101 @@
+{
+    "dogs": [
+        {
+            "name": "Tracker",
+            "breed": "Springer",
+            "sex": "Male",
+            "shots": "Yes",
+            "age": "12",
+            "size": "40g.",
+            "licensed": "Yes",
+            "neutered": "No",
+            "owners": "Backs",
+            "notes": "Notes"
+        },
+        {
+            "name": "Bucky",
+            "breed": "Poodle",
+            "sex": "Female",
+            "shots": "Not all",
+            "age": "4",
+            "size": "12g.",
+            "licensed": "No",
+            "neutered": "Yes",
+            "owners": "Johnsons",
+            "notes": "Notes"
+        },
+        {
+            "name": "Bailey",
+            "breed": "Beagle/Hound",
+            "sex": "Female",
+            "shots": "Yes",
+            "age": "6",
+            "size": "24g.",
+            "licensed": "Yes",
+            "neutered": "No",
+            "owners": "Backs",
+            "notes": "Notes"
+        }
+    ],
+    "cats": [
+        {
+            "name": "Whiskers",
+            "breed": "Siamese",
+            "sex": "Female",
+            "shots": "Not all",
+            "age": "8",
+            "declawed": "Yes",
+            "neutered": "No",
+            "owners": "Smiths",
+            "notes": "Notes"
+        },
+        {
+            "name": "Fluffy",
+            "breed": "Sphynx",
+            "sex": "Male",
+            "shots": "Yes",
+            "age": "4",
+            "declawed": "No",
+            "neutered": "Yes",
+            "owners": "Squires",
+            "notes": "Notes"
+        },
+        {
+            "name": "Scitz",
+            "breed": "House",
+            "sex": "Female",
+            "shots": "Yes",
+            "age": "12",
+            "declawed": "Yes",
+            "neutered": "Yes",
+            "owners": "Backs",
+            "notes": "Notes"
+        }
+    ],
+    "exotics": [
+    {
+            "name": "Lizzy",
+            "species": "Lizard",
+            "sex": "Female",
+            "age": "3",
+            "owners": "Durfeys",
+            "notes": "Notes"
+        },
+        {
+            "name": "Young Boss",
+            "species": "Squirrel",
+            "sex": "Male",
+            "age": "8",
+            "owners": "Shelleys",
+            "notes": "Notes"
+        },
+        {
+            "name": "Ball",
+            "species": "Hamster",
+            "sex": "Male",
+            "age": "1",
+            "owners": "Gales",
+            "notes": "Notes"
+        }
+    ]
+}
