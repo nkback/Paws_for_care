@@ -31,6 +31,13 @@
     <script>
         $(document).ready(function(){
             generateDogTable(animalData);
+
+            // document.getElementsByTagName("input").addEventListener("change", function(){
+            //     console.log("Here");
+            // });
+            $("input").change(function(){
+                console.log("Here");
+            });
         });
     </script>
 </head>
@@ -76,25 +83,40 @@
     <div class="jumbotron text-center">
         <h1>Dogs</h1>
     </div>
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Breed &#9660</th>
-                    <th scope="col">Sex</th>
-                    <th scope="col">Shots</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Size</th>
-                    <th scope="col">Licensed</th>
-                    <th scope="col">Neutered</th>
-                    <th scope="col">Owners</th>
-                    <th scope="col">Notes</th>
-                </tr>
-            </thead>
-            <tbody data-tableType="dogs" id="dogTable">
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input id="tester" data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="breed" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Breed &#9660</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">Shots</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Licensed</th>
+                        <th scope="col">Neutered</th>
+                        <th scope="col">Owners</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody data-tableType="dogs" id="dogTable">
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- <div id="myModal" class="modal fade" role="dialog"> -->
         <!-- <div class="modal-dialog"> -->
