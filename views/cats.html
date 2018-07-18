@@ -58,28 +58,142 @@
             $(".sortable").click(function(){
                 let key = $(this).attr("data-key");
                 if(key === "name"){
-                    document.getElementById("catTable").innerHTML = "";
-                    generateCatTable(animalData.cats.name.sort());
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.name < b.name) return -1;
+                            if(a.name > b.name) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
                 }
-                var filteredArray = animalData.cats.sort(function(animalArr){
-                    if(key === "name"){
-                        return animalArr.name.startsWith(value);
+                else if(key === "breed"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
                     }
-                    else if(key === "breed"){
-                        return animalArr.breed.startsWith(value);
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.breed < b.breed) return -1;
+                            if(a.breed > b.breed) return 1;
+                            return 0;
+                        }));
                     }
-                    else if(key === "sex"){
-                        return animalArr.sex.startsWith(value);
+                    sortableHolder = key;
+                }
+                else if(key === "sex"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
                     }
-                    else if(key === "owners"){
-                        return animalArr.owners.startsWith(value);
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.sex < b.sex) return -1;
+                            if(a.sex > b.sex) return 1;
+                            return 0;
+                        }));
                     }
-                    else if(key === "notes"){
-                        return animalArr.notes.startsWith(value);
+                    sortableHolder = key;
+                }
+                else if(key === "shots"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
                     }
-                })
-                document.getElementById("catTable").innerHTML = "";
-                generateCatTable(filteredArray);
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.shots < b.shots) return -1;
+                            if(a.shots > b.shots) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                else if(key === "age"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(parseInt(a.age) < parseInt(b.age)) return -1;
+                            if(parseInt(a.age) > parseInt(b.age)) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                else if(key === "declawed"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.declawed < b.declawed) return -1;
+                            if(a.declawed > b.declawed) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                else if(key === "neutered"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            if(a.neutered < b.neutered) return -1;
+                            if(a.neutered > b.neutered) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                else if(key === "owners"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            return (''+a.owners).localeCompare(b.owners);
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                // var filteredArray = animalData.cats.sort(function(animalArr){
+                //     if(key === "name"){
+                //         return animalArr.name.startsWith(value);
+                //     }
+                //     else if(key === "breed"){
+                //         return animalArr.breed.startsWith(value);
+                //     }
+                //     else if(key === "sex"){
+                //         return animalArr.sex.startsWith(value);
+                //     }
+                //     else if(key === "owners"){
+                //         return animalArr.owners.startsWith(value);
+                //     }
+                //     else if(key === "notes"){
+                //         return animalArr.notes.startsWith(value);
+                //     }
+                // })
+                // document.getElementById("catTable").innerHTML = "";
+                // generateCatTable(filteredArray);
             });
         });
     </script>
@@ -126,35 +240,38 @@
     <div class="jumbotron text-center">
         <h1>Cats</h1>
     </div>
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
-                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="breed" type="text" placeholder="filter" class="form-control"></div></th>
-                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
-                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
-                </tr>
-                <tr>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Owners</th>
-                    <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Notes</th>
-                </tr>
-            </thead>
-            <tbody data-tableType="cats" id="catTable">
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="breed" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Owners</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Notes</th>
+                    </tr>
+                </thead>
+                <tbody data-tableType="cats" id="catTable">
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- <div id="myModal" class="modal fade" role="dialog"> -->
         <!-- <div class="modal-dialog"> -->
