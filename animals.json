@@ -10,7 +10,7 @@
             "licensed": "Yes",
             "neutered": "No",
             "owners": "Backs",
-            "notes": "Notes"
+            "notes": "Notes here"
         },
         {
             "name": "Bucky",
@@ -22,7 +22,7 @@
             "licensed": "No",
             "neutered": "Yes",
             "owners": "Johnsons",
-            "notes": "Notes"
+            "notes": "Notes there"
         },
         {
             "name": "Bailey",
@@ -34,7 +34,7 @@
             "licensed": "Yes",
             "neutered": "No",
             "owners": "Backs",
-            "notes": "Notes"
+            "notes": "Notes everywhere"
         }
     ],
     "cats": [
@@ -46,8 +46,8 @@
             "age": "8",
             "declawed": "Yes",
             "neutered": "No",
-            "owners": "Smiths",
-            "notes": "Notes"
+            "owners": "Chase",
+            "notes": "Notes here"
         },
         {
             "name": "Fluffy",
@@ -57,8 +57,8 @@
             "age": "4",
             "declawed": "No",
             "neutered": "Yes",
-            "owners": "Squires",
-            "notes": "Notes"
+            "owners": "Adams",
+            "notes": "Notes there"
         },
         {
             "name": "Scitz",
@@ -68,8 +68,8 @@
             "age": "12",
             "declawed": "Yes",
             "neutered": "Yes",
-            "owners": "Backs",
-            "notes": "Notes"
+            "owners": "Browns",
+            "notes": "Notes everywhere"
         }
     ],
     "exotics": [
@@ -79,7 +79,7 @@
             "sex": "Female",
             "age": "3",
             "owners": "Durfeys",
-            "notes": "Notes"
+            "notes": "Notes here"
         },
         {
             "name": "Young Boss",
@@ -87,7 +87,7 @@
             "sex": "Male",
             "age": "8",
             "owners": "Shelleys",
-            "notes": "Notes"
+            "notes": "Notes there"
         },
         {
             "name": "Ball",
@@ -95,7 +95,7 @@
             "sex": "Male",
             "age": "1",
             "owners": "Gales",
-            "notes": "Notes"
+            "notes": "Notes everywhere"
         }
     ]
 }

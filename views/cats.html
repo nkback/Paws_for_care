@@ -65,8 +65,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.name < b.name) return -1;
-                            if(a.name > b.name) return 1;
+                            var varA = a.name.toLowerCase(), varB=b.name.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -80,8 +81,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.breed < b.breed) return -1;
-                            if(a.breed > b.breed) return 1;
+                            var varA = a.breed.toLowerCase(), varB=b.breed.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -95,8 +97,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.sex < b.sex) return -1;
-                            if(a.sex > b.sex) return 1;
+                            var varA = a.sex.toLowerCase(), varB=b.sex.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -110,8 +113,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.shots < b.shots) return -1;
-                            if(a.shots > b.shots) return 1;
+                            var varA = a.shots.toLowerCase(), varB=b.shots.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -140,8 +144,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.declawed < b.declawed) return -1;
-                            if(a.declawed > b.declawed) return 1;
+                            var varA = a.declawed.toLowerCase(), varB=b.declawed.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -155,8 +160,9 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            if(a.neutered < b.neutered) return -1;
-                            if(a.neutered > b.neutered) return 1;
+                            var varA = a.neutered.toLowerCase(), varB=b.neutered.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
                             return 0;
                         }));
                     }
@@ -170,30 +176,30 @@
                     else{
                         document.getElementById("catTable").innerHTML = "";
                         generateCatTable(animalData.cats.sort(function(a,b){
-                            return (''+a.owners).localeCompare(b.owners);
+                            var varA = a.owners.toLowerCase(), varB=b.owners.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
+                            return 0;
                         }));
                     }
                     sortableHolder = key;
                 }
-                // var filteredArray = animalData.cats.sort(function(animalArr){
-                //     if(key === "name"){
-                //         return animalArr.name.startsWith(value);
-                //     }
-                //     else if(key === "breed"){
-                //         return animalArr.breed.startsWith(value);
-                //     }
-                //     else if(key === "sex"){
-                //         return animalArr.sex.startsWith(value);
-                //     }
-                //     else if(key === "owners"){
-                //         return animalArr.owners.startsWith(value);
-                //     }
-                //     else if(key === "notes"){
-                //         return animalArr.notes.startsWith(value);
-                //     }
-                // })
-                // document.getElementById("catTable").innerHTML = "";
-                // generateCatTable(filteredArray);
+                else if(key === "notes"){
+                    if(key === sortableHolder){
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.reverse());
+                    }
+                    else{
+                        document.getElementById("catTable").innerHTML = "";
+                        generateCatTable(animalData.cats.sort(function(a,b){
+                            var varA = a.notes.toLowerCase(), varB=b.notes.toLowerCase();
+                            if(varA < varB) return -1;
+                            if(varA > varB) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
             });
         });
     </script>
@@ -264,8 +270,8 @@
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age</th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed</th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Owners</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Notes</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="owners">Owners</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="notes">Notes</th>
                     </tr>
                 </thead>
                 <tbody data-tableType="cats" id="catTable">
