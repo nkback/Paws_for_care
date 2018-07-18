@@ -30,13 +30,33 @@
     <!-- Javascript -->
     <script>
         $(document).ready(function(){
-            generateDogTable(animalData);
+            generateDogTable(animalData.dogs);
 
             // document.getElementsByTagName("input").addEventListener("change", function(){
             //     console.log("Here");
             // });
             $("input").change(function(){
-                console.log("Here");
+                let key = $(this).attr("data-key");
+                let value = $(this).val();
+                var filteredArray = animalData.dogs.filter(function(animalArr){
+                    if(key === "name"){
+                        return animalArr.name.startsWith(value);
+                    }
+                    else if(key === "breed"){
+                        return animalArr.breed.startsWith(value);
+                    }
+                    else if(key === "sex"){
+                        return animalArr.sex.startsWith(value);
+                    }
+                    else if(key === "owners"){
+                        return animalArr.owners.startsWith(value);
+                    }
+                    else if(key === "notes"){
+                        return animalArr.notes.startsWith(value);
+                    }
+                })
+                document.getElementById("dogTable").innerHTML = "";
+                generateDogTable(filteredArray);
             });
         });
     </script>
@@ -89,7 +109,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input id="tester" data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="breed" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"></th>
@@ -101,16 +121,16 @@
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
                     </tr>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Breed &#9660</th>
-                        <th scope="col">Sex</th>
-                        <th scope="col">Shots</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Size</th>
-                        <th scope="col">Licensed</th>
-                        <th scope="col">Neutered</th>
-                        <th scope="col">Owners</th>
-                        <th scope="col">Notes</th>
+                        <th scope="col" style="cursor: pointer">Name</th>
+                        <th scope="col" style="cursor: pointer">Breed &#9660</th>
+                        <th scope="col" style="cursor: pointer">Sex</th>
+                        <th scope="col" style="cursor: pointer">Shots</th>
+                        <th scope="col" style="cursor: pointer">Age</th>
+                        <th scope="col" style="cursor: pointer">Size</th>
+                        <th scope="col" style="cursor: pointer">Licensed</th>
+                        <th scope="col" style="cursor: pointer">Neutered</th>
+                        <th scope="col" style="cursor: pointer">Owners</th>
+                        <th scope="col" style="cursor: pointer">Notes</th>
                     </tr>
                 </thead>
                 <tbody data-tableType="dogs" id="dogTable">

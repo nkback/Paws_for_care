@@ -4,94 +4,94 @@ $.getJSON("../animals.json", function(jsonData){
 });
 
 var generateDogTable = (data) => {
-    for(let i = 0; i < data.dogs.length; i++){
+    for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
         let tdName = document.createElement('td');
-        tdName.textContent = data.dogs[i].name;
+        tdName.textContent = data[i].name;
         tr.appendChild(tdName);
         let tdBreed = document.createElement('td');
-        tdBreed.textContent = data.dogs[i].breed;
+        tdBreed.textContent = data[i].breed;
         tr.appendChild(tdBreed);                
         let tdSex = document.createElement('td');
-        tdSex.textContent = data.dogs[i].sex;
+        tdSex.textContent = data[i].sex;
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
-        tdShots.textContent = data.dogs[i].shots;
+        tdShots.textContent = data[i].shots;
         tr.appendChild(tdShots);                
         let tdAge = document.createElement('td');
-        tdAge.textContent = data.dogs[i].age;
+        tdAge.textContent = data[i].age;
         tr.appendChild(tdAge);                
         let tdSize = document.createElement('td');
-        tdSize.textContent = data.dogs[i].size;
+        tdSize.textContent = data[i].size;
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
-        tdLicensed.textContent = data.dogs[i].licensed;
+        tdLicensed.textContent = data[i].licensed;
         tr.appendChild(tdLicensed);
         let tdNeutered = document.createElement('td');
-        tdNeutered.textContent = data.dogs[i].neutered;
+        tdNeutered.textContent = data[i].neutered;
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.textContent = data.dogs[i].owners;
+        tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
-        tdNotes.textContent = data.dogs[i].notes;
+        tdNotes.textContent = data[i].notes;
         tr.appendChild(tdNotes);
         document.getElementById("dogTable").appendChild(tr);                
     }
 }
 var generateCatTable = (data) => {
-    for(let i = 0; i < data.cats.length; i++){
+    for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
         let tdName = document.createElement('td');
-        tdName.textContent = data.cats[i].name;
+        tdName.textContent = data[i].name;
         tr.appendChild(tdName);
         let tdBreed = document.createElement('td');
-        tdBreed.textContent = data.cats[i].breed;
+        tdBreed.textContent = data[i].breed;
         tr.appendChild(tdBreed);                
         let tdSex = document.createElement('td');
-        tdSex.textContent = data.cats[i].sex;
+        tdSex.textContent = data[i].sex;
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
-        tdShots.textContent = data.cats[i].shots;
+        tdShots.textContent = data[i].shots;
         tr.appendChild(tdShots);                
         let tdAge = document.createElement('td');
-        tdAge.textContent = data.cats[i].age;
+        tdAge.textContent = data[i].age;
         tr.appendChild(tdAge);                
         let tdSize = document.createElement('td');
-        tdSize.textContent = data.cats[i].declawed;
+        tdSize.textContent = data[i].declawed;
         tr.appendChild(tdSize);                
         let tdNeutered = document.createElement('td');
-        tdNeutered.textContent = data.cats[i].neutered;
+        tdNeutered.textContent = data[i].neutered;
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.textContent = data.cats[i].owners;
+        tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
-        tdNotes.textContent = data.cats[i].notes;
+        tdNotes.textContent = data[i].notes;
         tr.appendChild(tdNotes);                
         document.getElementById("catTable").appendChild(tr);                
     }
 }
 var generateExoticTable = (data) => {
-    for(let i = 0; i < data.exotics.length; i++){
+    for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
         let tdName = document.createElement('td');
-        tdName.textContent = data.exotics[i].name;
+        tdName.textContent = data[i].name;
         tr.appendChild(tdName);
         let tdBreed = document.createElement('td');
-        tdBreed.textContent = data.exotics[i].species;
+        tdBreed.textContent = data[i].species;
         tr.appendChild(tdBreed);                
         let tdSex = document.createElement('td');
-        tdSex.textContent = data.exotics[i].sex;
+        tdSex.textContent = data[i].sex;
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
-        tdShots.textContent = data.exotics[i].age;
+        tdShots.textContent = data[i].age;
         tr.appendChild(tdShots);                                
         let tdSize = document.createElement('td');
-        tdSize.textContent = data.exotics[i].owners;
+        tdSize.textContent = data[i].owners;
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
-        tdLicensed.textContent = data.exotics[i].notes;
+        tdLicensed.textContent = data[i].notes;
         tr.appendChild(tdLicensed);                
         document.getElementById("exoticTable").appendChild(tr);                
     }

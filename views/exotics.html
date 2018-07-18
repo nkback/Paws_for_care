@@ -30,7 +30,31 @@
     <!-- Javascript -->
     <script>
         $(document).ready(function(){
-            generateExoticTable(animalData);
+            generateExoticTable(animalData.exotics);
+
+            $("input").change(function(){
+                let key = $(this).attr("data-key");
+                let value = $(this).val();
+                var filteredArray = animalData.exotics.filter(function(animalArr){
+                    if(key === "name"){
+                        return animalArr.name.startsWith(value);
+                    }
+                    else if(key === "species"){
+                        return animalArr.species.startsWith(value);
+                    }
+                    else if(key === "sex"){
+                        return animalArr.sex.startsWith(value);
+                    }
+                    else if(key === "owners"){
+                        return animalArr.owners.startsWith(value);
+                    }
+                    else if(key === "notes"){
+                        return animalArr.notes.startsWith(value);
+                    }
+                })
+                document.getElementById("exoticTable").innerHTML = "";
+                generateExoticTable(filteredArray);
+            });
         });
     </script>
 </head>
@@ -80,12 +104,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Species</th>
-                    <th scope="col">Sex</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Owners</th>
-                    <th scope="col">Notes</th>
+                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
+                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="species" type="text" placeholder="filter" class="form-control"></div></th>
+                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
+                    <th scope="col"></th>
+                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
+                    <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
+                </tr>
+                <tr>
+                    <th scope="col" style="cursor: pointer">Name</th>
+                    <th scope="col" style="cursor: pointer">Species</th>
+                    <th scope="col" style="cursor: pointer">Sex</th>
+                    <th scope="col" style="cursor: pointer">Age</th>
+                    <th scope="col" style="cursor: pointer">Owners</th>
+                    <th scope="col" style="cursor: pointer">Notes</th>
                 </tr>
             </thead>
             <tbody data-tableType="exotics" id="exoticTable">
