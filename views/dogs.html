@@ -5,13 +5,13 @@
     <title>Nathan Back Stats Project</title>
     <!-- CSS -->
     <style>
-        .jumbotron{
+        /* .jumbotron{
             background-color: #4da6ff !important;
             color: #ffffff !important;
         }
         /* h1{
             padding-top: 20px;
-        } */
+        } */ */
     </style>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -60,10 +60,22 @@
                 generateDogTable(filteredArray);
             });
             $(".sortable").click(function(){
-                $(this).find("#arrow").html("&darr;");
                 let key = $(this).attr("data-key");
                 if(key === sortableHolder){
-                    console.log(($(this).find("#arrow").html() !== "") ? "Yes" : "No");
+                    if($(this).find("#arrow").attr("class") == "down"){
+                        $(this).find("#arrow").html("&uarr;");
+                        $(this).find("#arrow").attr("class", "up");
+                    }
+                    else {
+                        $(this).find("#arrow").html("&darr;");
+                        $(this).find("#arrow").attr("class", "down");                
+                    }
+                }
+                else {
+                    $(".up").removeClass("up").html("");
+                    $(".down").removeClass("down").html("");
+                    $(this).find("#arrow").attr("class", "down");
+                    $(this).find("#arrow").html("&darr;");
                 }
                 if(key === "name"){
                     if(key === sortableHolder){
@@ -266,7 +278,7 @@
                 </ul>
             </div>
     </nav>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center bg-info text-white">
         <h1>Dogs</h1>
     </div>
     <div class="row">
