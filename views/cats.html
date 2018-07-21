@@ -5,10 +5,10 @@
     <title>Nathan Back Stats Project</title>
     <!-- CSS -->
     <style>
-        .jumbotron{
+        /* .jumbotron{
             background-color: #4da6ff !important;
             color: #ffffff !important;
-        }
+        } */
         /* h1{
             padding-top: 20px;
         } */
@@ -19,11 +19,14 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+    <!-- Lodash -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
     <script src="../main.js"></script>
     
@@ -34,7 +37,7 @@
             generateCatTable(animalData.cats);
             $("input").change(function(){
                 let key = $(this).attr("data-key");
-                let value = $(this).val();
+                let value = _.upperFirst($(this).val());
                 var filteredArray = animalData.cats.filter(function(animalArr){
                     if(key === "name"){
                         return animalArr.name.startsWith(value);
@@ -57,6 +60,22 @@
             });
             $(".sortable").click(function(){
                 let key = $(this).attr("data-key");
+                if(key === sortableHolder){
+                    if($(this).find("#arrow").attr("class") == "down"){
+                        $(this).find("#arrow").html("&uarr;");
+                        $(this).find("#arrow").attr("class", "up");
+                    }
+                    else {
+                        $(this).find("#arrow").html("&darr;");
+                        $(this).find("#arrow").attr("class", "down");                
+                    }
+                }
+                else {
+                    $(".up").removeClass("up").html("");
+                    $(".down").removeClass("down").html("");
+                    $(this).find("#arrow").attr("class", "down");
+                    $(this).find("#arrow").html("&darr;");
+                }
                 if(key === "name"){
                     if(key === sortableHolder){
                         document.getElementById("catTable").innerHTML = "";
@@ -259,19 +278,21 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
-                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th> -->
+                        <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
                     </tr>
                     <tr>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="owners">Owners</th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="notes">Notes</th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
+                        <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
+                        <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>
                 </thead>
                 <tbody data-tableType="cats" id="catTable">
@@ -279,23 +300,51 @@
             </table>
         </div>
     </div>
-    <!-- <div id="myModal" class="modal fade" role="dialog"> -->
-        <!-- <div class="modal-dialog"> -->
-            <!-- Modal content-->
-            <!-- <div class="modal-content"> -->
-            <!-- <div class="modal-header"> -->
-                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                <!-- <h4 class="modal-title">Find P(X<span class="sign"></span>=<span class="xValue">x</span>), X ~ Bin(<span class="size">n</span>,<span class="probability">p</span>)</h4> -->
-            <!-- </div> -->
-            <!-- <div class="modal-body"> -->
-                <!-- <p>The probability that P(X<span class="sign"></span>=<span class="xValue">x</span>) ends up being: <span id="answer"></span> or <span id="answerFormatted"></span>%</p> -->
-            <!-- </div> -->
-            <!-- <div class="modal-footer"> -->
-                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-            <!-- </div> -->
-            <!-- </div> -->
-        
-        <!-- </div> -->
-    <!-- </div> -->
+    <div id="ownerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Owner Modal</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                Coming soon..
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="notesModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Notes Modal</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                Coming soon..
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              
+            </div>
+        </div>
+    </div>
 </body>
 </html>

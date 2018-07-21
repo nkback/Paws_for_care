@@ -31,10 +31,12 @@ var generateDogTable = (data) => {
         tdNeutered.textContent = data[i].neutered;
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.textContent = data[i].owners;
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" data-toggle="modal" data-target="#ownerModal">Click here</a>';
+        // tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
-        tdNotes.textContent = data[i].notes;
+        // tdNotes.textContent = data[i].notes;
+        tdNotes.innerHTML = '<a href="#" class="notesModal" data-toggle="modal" data-target="#notesModal">Click here</a>';
         tr.appendChild(tdNotes);
         document.getElementById("dogTable").appendChild(tr);                
     }
@@ -64,10 +66,12 @@ var generateCatTable = (data) => {
         tdNeutered.textContent = data[i].neutered;
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.textContent = data[i].owners;
+        // tdOwners.textContent = data[i].owners;
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" data-toggle="modal" data-target="#ownerModal">Click here</a>';
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
-        tdNotes.textContent = data[i].notes;
+        // tdNotes.textContent = data[i].notes;
+        tdNotes.innerHTML = '<a href="#" class="notesModal" data-toggle="modal" data-target="#notesModal">Click here</a>';
         tr.appendChild(tdNotes);                
         document.getElementById("catTable").appendChild(tr);                
     }
@@ -88,10 +92,12 @@ var generateExoticTable = (data) => {
         tdShots.textContent = data[i].age;
         tr.appendChild(tdShots);                                
         let tdSize = document.createElement('td');
-        tdSize.textContent = data[i].owners;
+        // tdSize.textContent = data[i].owners;
+        tdSize.innerHTML = '<a href="#" class="ownersModal" data-toggle="modal" data-target="#ownerModal">Click here</a>';
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
-        tdLicensed.textContent = data[i].notes;
+        // tdLicensed.textContent = data[i].notes;
+        tdLicensed.innerHTML = '<a href="#" class="notesModal" data-toggle="modal" data-target="#notesModal">Click here</a>';
         tr.appendChild(tdLicensed);                
         document.getElementById("exoticTable").appendChild(tr);                
     }
