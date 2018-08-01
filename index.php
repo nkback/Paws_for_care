@@ -44,8 +44,7 @@
                         die("Connection failed: ".$conn->connect_error);
                     }
                     $data = $conn->query("select * from tester");
-                    die($data);
-                    echo "<h4>".serialize($data)."</h4>";
+                    echo "<h4>".$data->num_rows."</h4>";
                     ?>
                     <!-- <h4>We Love Dogs</h4> -->
                 </div>
