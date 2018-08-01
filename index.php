@@ -33,7 +33,18 @@
                 <img class="d-block w-100" src="../images/dog.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Dogs</h1>
-                    <h4>We Love Dogs</h4>
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "tracker";
+
+                    $conn = new mysqli($servername,$username,$password);
+                    if($conn->connect_error){
+                        die("Connection failed: ".$conn->connect_error);
+                    }
+                    echo "<h4>Connected Successfully</h4>"
+                    ?>
+                    <!-- <h4>We Love Dogs</h4> -->
                 </div>
             </div>
             <div class="carousel-item">
