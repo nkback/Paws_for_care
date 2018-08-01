@@ -44,7 +44,8 @@
                         die("Connection failed: ".$conn->connect_error);
                     }
                     $data = $conn->query("select * from tester");
-                    echo "<h4>".$data->fetch_assoc()."</h4>";
+                    $row = $data->fetch_assoc();
+                    echo "<h4>".$row["test_column"]."</h4>";
                     ?>
                     <!-- <h4>We Love Dogs</h4> -->
                 </div>
