@@ -43,7 +43,8 @@
                     if($conn->connect_error){
                         die("Connection failed: ".$conn->connect_error);
                     }
-                    echo "<h4>Connected Successfully</h4>"
+                    $data = $conn->query("select * from tester");
+                    echo "<h4>$data</h4>"
                     ?>
                     <!-- <h4>We Love Dogs</h4> -->
                 </div>
