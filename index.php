@@ -34,7 +34,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Dogs</h1>
                     <?php
-                    $servername = "localhost";
+                    $servername = "127.0.0.1";
                     $username = "root";
                     $password = "tracker";
 
