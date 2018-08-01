@@ -1,44 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <title>Paws To Care</title>
-    <!-- CSS -->
-    <style>
-        /* .jumbotron{
-            background-color: #4da6ff !important;
-            color: #ffffff !important;
-        } */
-        /* h1{
-            padding-top: 20px;
-        } */
-    </style>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <!-- Lodash -->
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
-    <script src="../main.js"></script>
-    
+<?php include 'header.php';?>
     <!-- Javascript -->
     <script>
         $(document).ready(function(){
             var sortableHolder;
-            generateCatTable(animalData.cats);
+            generateDogTable(animalData.dogs);
+
+            // document.getElementsByTagName("input").addEventListener("change", function(){
+            //     console.log("Here");
+            // });
             $("input").change(function(){
                 let key = $(this).attr("data-key");
                 let value = _.upperFirst($(this).val());
-                var filteredArray = animalData.cats.filter(function(animalArr){
+                var filteredArray = animalData.dogs.filter(function(animalArr){
                     if(key === "name"){
                         return animalArr.name.startsWith(value);
                     }
@@ -55,8 +28,8 @@
                         return animalArr.notes.startsWith(value);
                     }
                 })
-                document.getElementById("catTable").innerHTML = "";
-                generateCatTable(filteredArray);
+                document.getElementById("dogTable").innerHTML = "";
+                generateDogTable(filteredArray);
             });
             $(".sortable").click(function(){
                 let key = $(this).attr("data-key");
@@ -78,12 +51,12 @@
                 }
                 if(key === "name"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.name.toLowerCase(), varB=b.name.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -94,12 +67,12 @@
                 }
                 else if(key === "breed"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.breed.toLowerCase(), varB=b.breed.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -110,12 +83,12 @@
                 }
                 else if(key === "sex"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.sex.toLowerCase(), varB=b.sex.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -126,12 +99,12 @@
                 }
                 else if(key === "shots"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.shots.toLowerCase(), varB=b.shots.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -142,12 +115,12 @@
                 }
                 else if(key === "age"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             if(parseInt(a.age) < parseInt(b.age)) return -1;
                             if(parseInt(a.age) > parseInt(b.age)) return 1;
                             return 0;
@@ -155,15 +128,30 @@
                     }
                     sortableHolder = key;
                 }
-                else if(key === "declawed"){
+                else if(key === "size"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
-                            var varA = a.declawed.toLowerCase(), varB=b.declawed.toLowerCase();
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
+                            if(parseInt(a.size) < parseInt(b.size)) return -1;
+                            if(parseInt(a.size) > parseInt(b.size)) return 1;
+                            return 0;
+                        }));
+                    }
+                    sortableHolder = key;
+                }
+                else if(key === "licensed"){
+                    if(key === sortableHolder){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
+                    }
+                    else{
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
+                            var varA = a.licensed.toLowerCase(), varB=b.licensed.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
                             return 0;
@@ -173,12 +161,12 @@
                 }
                 else if(key === "neutered"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.neutered.toLowerCase(), varB=b.neutered.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -189,12 +177,12 @@
                 }
                 else if(key === "owners"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.owners.toLowerCase(), varB=b.owners.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -205,12 +193,12 @@
                 }
                 else if(key === "notes"){
                     if(key === sortableHolder){
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.reverse());
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.reverse());
                     }
                     else{
-                        document.getElementById("catTable").innerHTML = "";
-                        generateCatTable(animalData.cats.sort(function(a,b){
+                        document.getElementById("dogTable").innerHTML = "";
+                        generateDogTable(animalData.dogs.sort(function(a,b){
                             var varA = a.notes.toLowerCase(), varB=b.notes.toLowerCase();
                             if(varA < varB) return -1;
                             if(varA > varB) return 1;
@@ -222,48 +210,10 @@
             });
         });
     </script>
-</head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Paws To Care</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dogs.html">Dogs</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="cats.html">Cats</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="exotics.html">Exotics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li> -->
-                </ul>
-            </div>
-    </nav>
+    <?php include 'navbar.php';?>
     <div class="jumbotron text-center bg-info text-white">
-        <h1>Cats</h1>
+        <h1>Dogs</h1>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
@@ -280,8 +230,9 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th> -->
-                        <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
+                        <th scope="col"></th>
+                        <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
+                        <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
                     </tr>
                     <tr>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
@@ -289,13 +240,14 @@
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="size">Size <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="licensed">Licensed <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
                         <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>
                 </thead>
-                <tbody data-tableType="cats" id="catTable">
+                <tbody data-tableType="dogs" id="dogTable">
                 </tbody>
             </table>
         </div>
