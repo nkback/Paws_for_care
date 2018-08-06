@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            let toTimestamp = (strDate) => Date.parse(strDate);
+//            var myDate = toTimestamp(faker.date.recent());
+//            var parsedDate = new Date(myDate);
+//            INSER INTO cats VALUES(NULL,name(S), breed(S), sex(CHAR), shots(BOOL), declawed, neutered, birthdate(time));
+            for(let i = 0; i < 1000; i++){
+                if(i % 2 === 0)
+                    var sex = "M";
+                else
+                    var sex = "F";
+                let insert = "INSERT INTO cats VALUES(NULL,"+
+                '"'+faker.name.firstName()+'"'+','+
+                '"'+faker.random.arrayElement(["British Shorthair", "Persian","Siamese","Maine Coon","Ragdoll","Sphynx","Abyssinian","American Shorthair","Bengal","American Bobtail","Birman","Siberian","Japanese Bobtail","Devon Rex"])+'"'+','+
+                '"'+sex+'"'+','+
+                faker.random.boolean()+','+
+                faker.random.boolean()+','+
+                faker.random.boolean()+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+
+                ');';
+                $("#par").append(insert+"<br>");
+
+            }
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO dogs VALUES(NULL,"+
+                '"'+faker.name.firstName()+'"'+','+
+                '"'+faker.random.arrayElement(["German Shepherd", "Labrador","Retriever","Bulldog","Poodle","Beagle","Springer Spaniel","Chuhuahua","Pug","Rottweiler","Husky","Boxer","Mastiff","Great Dane"])+'"'+','+
+                '"'+faker.random.arrayElement(["M", "F"])+'"'+','+
+                faker.random.boolean()+','+
+                faker.random.boolean()+','+
+                faker.random.boolean()+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+','+
+                faker.random.number({'min': 3, 'max': 50})+
+                ');';
+                $("#par").append(insert+"<br>");
+
+            }
+//            Exotics Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO exotics VALUES(NULL,"+
+                '"'+faker.name.firstName()+'"'+','+
+                '"'+faker.random.arrayElement(["Scorpion", "Bearded Dragon","Sugar Glider","Tarantula","Hedgehog","Python","Fox","Wallaby","Monkey","Hamster","Horse"])+'"'+','+
+                '"'+faker.random.arrayElement(["M", "F"])+'"'+','+
+                faker.random.boolean()+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+
+                ');';
+                $("#par").append(insert+"<br>");
+
+            }
+//            Owners Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO owners VALUES(NULL,"+
+                '"'+faker.name.firstName()+'"'+','+
+                '"'+faker.name.lastName()+'"'+','+
+                '"'+faker.address.streetAddress()+'"'+','+
+                '"'+faker.address.secondaryAddress()+'"'+','+
+                '"'+faker.address.city()+'"'+','+
+                '"'+faker.address.stateAbbr()+'"'+','+
+                '"'+faker.address.zipCode().substring(0,5)+'"'+','+
+                faker.random.boolean()+','+
+                'DEFAULT);';
+                $("#par").append(insert+"<br>");
+
+            }
+//            dogsOwners Seeding
+            var count = 1000;
+            for(let i = 1; i < 1001; i++){
+                let insert = "INSERT INTO dogsOwners VALUES(NULL,"+i+','+count--+');';
+                $("#par").append(insert+'<br>');
+            }
+//            catsOwners Seeding
+            var count2 = 1000;
+            for(let i = 1; i < 1001; i++){
+                let insert = "INSERT INTO catsOwners VALUES(NULL,"+i+','+count2--+');';
+                $("#par").append(insert+'<br>');
+            }
+//            exoticsOwners Seeding
+            var count1 = 1000;
+            for(let i = 1; i < 1001; i++){
+                let insert = "INSERT INTO exoticsOwners VALUES(NULL,"+i+','+count1--+');';
+                $("#par").append(insert+'<br>');
+            }
+            var vetArr = [];
+            for(let i = 0; i < 8; i++){
+                vetArr.push(faker.name.findName());
+            }
+//            ownerNotes Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO ownerNotes VALUES(NULL,"+
+                faker.random.number({'min': 1, 'max': 1000})+','+
+                '"'+faker.random.arrayElement(vetArr)+'"'+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+','+
+                '"'+faker.lorem.paragraph()+'"'+');';
+                $("#par").append(insert+"<br>");
+            }
+//            catNotes Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO catNotes VALUES(NULL,"+
+                faker.random.number({'min': 1, 'max': 1000})+','+
+                '"'+faker.random.arrayElement(vetArr)+'"'+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+','+
+                '"'+faker.lorem.paragraph()+'"'+');';
+                $("#par").append(insert+"<br>");
+            }
+//            dogNotes Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO dogNotes VALUES(NULL,"+
+                faker.random.number({'min': 1, 'max': 1000})+','+
+                '"'+faker.random.arrayElement(vetArr)+'"'+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+','+
+                '"'+faker.lorem.paragraph()+'"'+');';
+                $("#par").append(insert+"<br>");
+            }
+//            exoticNotes Seeding
+            for(let i = 0; i < 1000; i++){
+                let insert = "INSERT INTO exoticNotes VALUES(NULL,"+
+                faker.random.number({'min': 1, 'max': 1000})+','+
+                '"'+faker.random.arrayElement(vetArr)+'"'+','+
+                '"'+new Date(toTimestamp(faker.date.past())).toISOString().slice(0, 19).replace('T', ' ')+'"'+','+
+                '"'+faker.lorem.paragraph()+'"'+');';
+                $("#par").append(insert+"<br>");
+            }
+            
+
+        });
+    </script>
+</head>
+<body>
+    <p id="par"></p>
+</body>
