@@ -2,8 +2,18 @@
 <!-- Javascript -->
 <script>
     $(document).ready(function(){
+
+        $.ajax({
+                 url:'/jsonData.php',
+                 data: {type: 'cats'},
+                 type: 'get',
+                 success: function(output){
+		     var data = JSON.parse(output);
+                     generateCatTable(data);
+                 }
+             })
         var sortableHolder;
-        generateCatTable(animalData.cats);
+        // generateCatTable(animalData.cats);
         $("input").change(function(){
             let key = $(this).attr("data-key");
             let value = _.upperFirst($(this).val());

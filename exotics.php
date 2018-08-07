@@ -9,8 +9,17 @@
             // $('.ownersModal').click(function(){
             //     $('#ownerModal').modal();
             // });
+            $.ajax({
+                 url:'/jsonData.php',
+                 data: {type: 'exotics'},
+                 type: 'get',
+                 success: function(output){
+		     var data = JSON.parse(output);
+                     generateExoticTable(data);
+                 }
+             })
             var sortableHolder;
-            generateExoticTable(animalData.exotics);
+            // generateExoticTable(animalData.exotics);
             $("input").change(function(){
                 let key = $(this).attr("data-key");
                 let value = _.upperFirst($(this).val());
