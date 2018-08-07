@@ -39,11 +39,15 @@ var generateDogTable = (data) => {
         tr.appendChild(tdShots);                
         let tdAge = document.createElement('td');
 //        tdAge.textContent = data[i].age;
-        tdAge.textContent = data[i][5];
+        // tdAge.textContent = data[i][5];
+        tdAge.innerHTML = (data[i][5]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+
         tr.appendChild(tdAge);                
         let tdSize = document.createElement('td');
 //        tdSize.textContent = data[i].size;
-        tdSize.textContent = data[i][6];
+        // tdSize.textContent = data[i][6];
+        tdSize.innerHTML = (data[i][6]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
 //        tdLicensed.textContent = data[i].licensed;
