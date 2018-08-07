@@ -3,6 +3,26 @@
     <script>
         $(document).ready(function(){
             var sortableHolder;
+            //     $servername = "127.0.0.1";
+            //     $username = "root";
+            //     $password = "tracker";
+            //     $dbName = "paws-to-care-db";
+
+            //     $conn = new mysqli($servername,$username,$password,$dbName);
+            //     if($conn->connect_error){
+            //         die("Connection failed: ".$conn->connect_error);
+            //     }
+            //     $data = $conn->query("select * from tester");
+            //     $row = $data->fetch_assoc();
+            //     echo "<h4>".$row["test_column"]."</h4>";
+            $.ajax({
+                url:'/jsonData.php',
+                data: {type: 'dog'},
+                type: 'get',
+                success: function(output){
+                    alert(output);
+                }
+            })
             generateDogTable(animalData.dogs);
 
             // document.getElementsByTagName("input").addEventListener("change", function(){
