@@ -84,16 +84,21 @@ var generateCatTable = (data) => {
         tdSex.textContent = data[i][3];
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
+        tdShots.innerHTML = (data[i][4]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+
         // tdShots.textContent = data[i].shots;
         tdShots.textContent = data[i][4];
         tr.appendChild(tdShots);                
         let tdAge = document.createElement('td');
         // tdAge.textContent = data[i].age;
-        tdAge.textContent = data[i][5];
+        // tdAge.textContent = data[i][5];
+        tdAge.innerHTML = (data[i][5]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+
         tr.appendChild(tdAge);                
         let tdSize = document.createElement('td');
         // tdSize.textContent = data[i].declawed;
-        tdSize.textContent = data[i][6];
+        // tdSize.textContent = data[i][6];
+        tdSize.innerHTML = (data[i][6]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
         tr.appendChild(tdSize);                
         let tdNeutered = document.createElement('td');
         // tdNeutered.textContent = data[i].neutered;
