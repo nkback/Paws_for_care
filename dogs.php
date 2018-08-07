@@ -52,183 +52,183 @@
                 document.getElementById("dogTable").innerHTML = "";
                 generateDogTable(filteredArray);
             });
-            $(".sortable").click(function(){
-                let key = $(this).attr("data-key");
-                if(key === sortableHolder){
-                    if($(this).find("#arrow").attr("class") == "down"){
-                        $(this).find("#arrow").html("&uarr;");
-                        $(this).find("#arrow").attr("class", "up");
-                    }
-                    else {
-                        $(this).find("#arrow").html("&darr;");
-                        $(this).find("#arrow").attr("class", "down");                
-                    }
-                }
-                else {
-                    $(".up").removeClass("up").html("");
-                    $(".down").removeClass("down").html("");
-                    $(this).find("#arrow").attr("class", "down");
-                    $(this).find("#arrow").html("&darr;");
-                }
-                if(key === "name"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.name.toLowerCase(), varB=b.name.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "breed"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.breed.toLowerCase(), varB=b.breed.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "sex"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.sex.toLowerCase(), varB=b.sex.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "shots"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.shots.toLowerCase(), varB=b.shots.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "age"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            if(parseInt(a.age) < parseInt(b.age)) return -1;
-                            if(parseInt(a.age) > parseInt(b.age)) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "size"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            if(parseInt(a.size) < parseInt(b.size)) return -1;
-                            if(parseInt(a.size) > parseInt(b.size)) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "licensed"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.licensed.toLowerCase(), varB=b.licensed.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "neutered"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.neutered.toLowerCase(), varB=b.neutered.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "owners"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.owners.toLowerCase(), varB=b.owners.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-                else if(key === "notes"){
-                    if(key === sortableHolder){
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.reverse());
-                    }
-                    else{
-                        document.getElementById("dogTable").innerHTML = "";
-                        generateDogTable(animalData.dogs.sort(function(a,b){
-                            var varA = a.notes.toLowerCase(), varB=b.notes.toLowerCase();
-                            if(varA < varB) return -1;
-                            if(varA > varB) return 1;
-                            return 0;
-                        }));
-                    }
-                    sortableHolder = key;
-                }
-            });
+            // $(".sortable").click(function(){
+            //     let key = $(this).attr("data-key");
+            //     if(key === sortableHolder){
+            //         if($(this).find("#arrow").attr("class") == "down"){
+            //             $(this).find("#arrow").html("&uarr;");
+            //             $(this).find("#arrow").attr("class", "up");
+            //         }
+            //         else {
+            //             $(this).find("#arrow").html("&darr;");
+            //             $(this).find("#arrow").attr("class", "down");                
+            //         }
+            //     }
+            //     else {
+            //         $(".up").removeClass("up").html("");
+            //         $(".down").removeClass("down").html("");
+            //         $(this).find("#arrow").attr("class", "down");
+            //         $(this).find("#arrow").html("&darr;");
+            //     }
+            //     if(key === "name"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.name.toLowerCase(), varB=b.name.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "breed"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.breed.toLowerCase(), varB=b.breed.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "sex"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.sex.toLowerCase(), varB=b.sex.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "shots"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.shots.toLowerCase(), varB=b.shots.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "age"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 if(parseInt(a.age) < parseInt(b.age)) return -1;
+            //                 if(parseInt(a.age) > parseInt(b.age)) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "size"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 if(parseInt(a.size) < parseInt(b.size)) return -1;
+            //                 if(parseInt(a.size) > parseInt(b.size)) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "licensed"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.licensed.toLowerCase(), varB=b.licensed.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "neutered"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.neutered.toLowerCase(), varB=b.neutered.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "owners"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.owners.toLowerCase(), varB=b.owners.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            //     else if(key === "notes"){
+            //         if(key === sortableHolder){
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.reverse());
+            //         }
+            //         else{
+            //             document.getElementById("dogTable").innerHTML = "";
+            //             generateDogTable(animalData.dogs.sort(function(a,b){
+            //                 var varA = a.notes.toLowerCase(), varB=b.notes.toLowerCase();
+            //                 if(varA < varB) return -1;
+            //                 if(varA > varB) return 1;
+            //                 return 0;
+            //             }));
+            //         }
+            //         sortableHolder = key;
+            //     }
+            // });
         });
     </script>
 <body>
