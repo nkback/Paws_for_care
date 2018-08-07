@@ -20,10 +20,11 @@
                 data: {type: 'dog'},
                 type: 'get',
                 success: function(output){
-                    alert(output);
+			var data = JSON.parse(output);
+                	generateDogTable(data);
                 }
             })
-            generateDogTable(animalData.dogs);
+            //generateDogTable(animalData.dogs);
 
             // document.getElementsByTagName("input").addEventListener("change", function(){
             //     console.log("Here");
@@ -259,10 +260,10 @@
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="size">Size <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="licensed">Licensed <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="size">Weight <span id="arrow"></span></th>
                         <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>

@@ -7,9 +7,9 @@
     if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
-    $data = $conn->query("select * from tester");
-    $data = json_encode($data->fetch_assoc());
-    return response($data,200);
+    $data = $conn->query("select * from dogs");
+    echo json_encode($data->fetch_all());
+    //return response($data,200);
     // $row = $data->fetch_assoc();
     // "<h4>".$row["test_column"]."</h4>";
 ?>
