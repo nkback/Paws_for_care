@@ -1,7 +1,20 @@
 var animalData;
-$.getJSON("../animals.json", function(jsonData){
-    animalData = jsonData;
+// $.getJSON("../animals.json", function(jsonData){
+//     animalData = jsonData;
+// });
+$.getJSON('/jsonData.php',function(jsonData){
+    // animalData = JSON.parse(jsonData);
+    console.log(jsonData);
 });
+// $.ajax({
+//     url:'/jsonData.php',
+//     data: {type: 'dog'},
+//     type: 'get',
+//     success: function(output){
+//         var data = JSON.parse(output);
+//         generateDogTable(data);
+//     }
+// })
 
 var generateDogTable = (data) => {
     for(let i = 0; i < data.length; i++){
