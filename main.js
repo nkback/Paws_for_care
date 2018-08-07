@@ -87,7 +87,7 @@ var generateCatTable = (data) => {
         tdShots.innerHTML = (data[i][4]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
 
         // tdShots.textContent = data[i].shots;
-        tdShots.textContent = data[i][4];
+        // tdShots.textContent = data[i][4];
         tr.appendChild(tdShots);                
         let tdAge = document.createElement('td');
         // tdAge.textContent = data[i].age;
