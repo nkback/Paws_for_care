@@ -130,12 +130,12 @@ var generateExoticTable = (data) => {
         // tdSex.textContent = data[i].sex;
         tdSex.textContent = data[i][3];
         tr.appendChild(tdSex);                
-        let tdShots = document.createElement('td');
+        let tdShots1 = document.createElement('td');
         // tdShots.textContent = data[i].age;
         // tdShots.textContent = data[i][4];
-        tdShots.innerHTML = (data[i][4]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+        tdShots1.innerHTML = (data[i][4]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
 
-        tr.appendChild(tdShots);                  
+        tr.appendChild(tdShots1);                  
         let tdAge = document.createElement('td');
         tdAge.textContent = data[i][5];
         tr.appendChild(tdAge);
