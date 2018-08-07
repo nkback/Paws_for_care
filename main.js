@@ -132,7 +132,9 @@ var generateExoticTable = (data) => {
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
         // tdShots.textContent = data[i].age;
-        tdShots.textContent = data[i][4];
+        // tdShots.textContent = data[i][4];
+        tdShots.innerHTML = (data[i][4]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
+
         tr.appendChild(tdShots);                  
         let tdAge = document.createElement('td');
         tdAge.textContent = data[i][5];
