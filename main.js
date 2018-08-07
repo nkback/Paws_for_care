@@ -108,17 +108,25 @@ var generateExoticTable = (data) => {
     for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
         let tdName = document.createElement('td');
-        tdName.textContent = data[i].name;
+        // tdName.textContent = data[i].name;
+        tdName.textContent = data[i][1];
         tr.appendChild(tdName);
         let tdBreed = document.createElement('td');
-        tdBreed.textContent = data[i].species;
+        // tdBreed.textContent = data[i].species;
+        tdBreed.textContent = data[i][2];
         tr.appendChild(tdBreed);                
         let tdSex = document.createElement('td');
-        tdSex.textContent = data[i].sex;
+        // tdSex.textContent = data[i].sex;
+        tdSex.textContent = data[i][3];
         tr.appendChild(tdSex);                
         let tdShots = document.createElement('td');
-        tdShots.textContent = data[i].age;
-        tr.appendChild(tdShots);                                
+        // tdShots.textContent = data[i].age;
+        tdShots.textContent = data[i][4];
+        tr.appendChild(tdShots);                  
+        let tdAge = document.createElement('td');
+        tdAge.textContent = data[i][5];
+        tr.appendChild(tdAge);
+        
         let tdSize = document.createElement('td');
         // tdSize.textContent = data[i].owners;
         tdSize.innerHTML = '<a href="#" class="ownersModal" data-toggle="modal" data-target="#ownerModal">Click here</a>';
