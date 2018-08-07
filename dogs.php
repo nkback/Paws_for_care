@@ -15,15 +15,15 @@
             //     $data = $conn->query("select * from tester");
             //     $row = $data->fetch_assoc();
             //     echo "<h4>".$row["test_column"]."</h4>";
-            // $.ajax({
-            //     url:'/jsonData.php',
-            //     data: {type: 'dog'},
-            //     type: 'get',
-            //     success: function(output){
-			//         var data = JSON.parse(output);
-            //     	generateDogTable(data);
-            //     }
-            // })
+            $.ajax({
+                 url:'/jsonData.php',
+                 data: {type: 'dogs'},
+                 type: 'get',
+                 success: function(output){
+		     var data = JSON.parse(output);
+                     generateDogTable(data);
+                 }
+             })
             //generateDogTable(animalData.dogs);
 
             // document.getElementsByTagName("input").addEventListener("change", function(){

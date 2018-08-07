@@ -1,11 +1,11 @@
 var animalData;
-// $.getJSON("../animals.json", function(jsonData){
-//     animalData = jsonData;
-// });
-$.getJSON('/jsonData.php',function(jsonData){
-    // animalData = JSON.parse(jsonData);
-    console.log(jsonData);
+$.getJSON("../animals.json", function(jsonData){
+     animalData = jsonData;
 });
+//$.getJSON('/jsonData.php',function(jsonData){
+    // animalData = JSON.parse(jsonData);
+    //console.log(jsonData);
+//});
 // $.ajax({
 //     url:'/jsonData.php',
 //     data: {type: 'dog'},
