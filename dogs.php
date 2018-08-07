@@ -29,29 +29,29 @@
             // document.getElementsByTagName("input").addEventListener("change", function(){
             //     console.log("Here");
             // });
-            $("input").change(function(){
-                let key = $(this).attr("data-key");
-                let value = _.upperFirst($(this).val());
-                var filteredArray = animalData.dogs.filter(function(animalArr){
-                    if(key === "name"){
-                        return animalArr.name.startsWith(value);
-                    }
-                    else if(key === "breed"){
-                        return animalArr.breed.startsWith(value);
-                    }
-                    else if(key === "sex"){
-                        return animalArr.sex.startsWith(value);
-                    }
-                    else if(key === "owners"){
-                        return animalArr.owners.startsWith(value);
-                    }
-                    else if(key === "notes"){
-                        return animalArr.notes.startsWith(value);
-                    }
-                })
-                document.getElementById("dogTable").innerHTML = "";
-                generateDogTable(filteredArray);
-            });
+            // $("input").change(function(){
+            //     let key = $(this).attr("data-key");
+            //     let value = _.upperFirst($(this).val());
+            //     var filteredArray = animalData.dogs.filter(function(animalArr){
+            //         if(key === "name"){
+            //             return animalArr.name.startsWith(value);
+            //         }
+            //         else if(key === "breed"){
+            //             return animalArr.breed.startsWith(value);
+            //         }
+            //         else if(key === "sex"){
+            //             return animalArr.sex.startsWith(value);
+            //         }
+            //         else if(key === "owners"){
+            //             return animalArr.owners.startsWith(value);
+            //         }
+            //         else if(key === "notes"){
+            //             return animalArr.notes.startsWith(value);
+            //         }
+            //     })
+            //     document.getElementById("dogTable").innerHTML = "";
+            //     generateDogTable(filteredArray);
+            // });
             // $(".sortable").click(function(){
             //     let key = $(this).attr("data-key");
             //     if(key === sortableHolder){
@@ -241,7 +241,7 @@
         <div class="col-md-10">
             <table class="table">
                 <thead>
-                    <tr>
+                    <!-- <tr>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="breed" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="sex" type="text" placeholder="filter" class="form-control"></div></th>
@@ -251,10 +251,10 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col"></th> -->
                         <!-- <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="owners" type="text" placeholder="filter" class="form-control"></div></th>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
-                    </tr>
+                    <!-- </tr> -->
                     <tr>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed <span id="arrow"></span></th>
