@@ -185,7 +185,7 @@
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="species">Species <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
                         <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
