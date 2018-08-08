@@ -58,7 +58,9 @@ var generateNotesData = () => {
                 $("#noteSpan").text("There are no notes for this animal.");
 
             for (let i = 0; i < data1.length; i++){
-                $("#noteSpan").append(data1[i][2] + " -- " + data1[i][3] + "<br><br>" + data1[i][4] + "<br><br><br>");
+                let date = new Date(data[i][3]);
+                let dateString = date.getMonth() + " " + date.getDate() + " " + date.getFullYear();
+                $("#noteSpan").append(data1[i][2] + " -- " + dateString + "<br><br>" + data1[i][4] + "<br><br><br>");
             
             }
         },
