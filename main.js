@@ -59,7 +59,7 @@ var generateNotesData = () => {
 
             for (let i = 0; i < data1.length; i++){
                 let date = new Date(data1[i][3]);
-                let dateString = date.getMonth() + " " + date.getDate() + " " + date.getFullYear();
+                let dateString = date.getMonth() + "-" + date.getDate() + "-" + date.getFullYear();
                 $("#noteSpan").append(data1[i][2] + " -- " + dateString + "<br><br>" + data1[i][4] + "<br><br><br>");
             
             }
