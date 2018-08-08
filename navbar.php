@@ -66,9 +66,9 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <form type="POST" action="authenticate.php">
-                    <label for="username">Username</label>
+                    <label for="username">Username:</label>
                     <input id="username" name="username" type="text" class="form-control">
-                    <label for="password">Password</label>
+                    <label for="password">Password:</label>
                     <input id="password" name="password" type="password" class="form-control">
                 </form>
             </div>
