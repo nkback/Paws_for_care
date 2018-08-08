@@ -37,8 +37,9 @@
 //                        "searching": false,
                         "bLengthChange": false,
                         "bAutoWidth": false,
-                        "oLanguage": {
-                            "sSearch": "your-text-here"
+                        "language": {
+                            "search": "",
+                            "searchPlaceholder": "filter",
                         }
                     });
                 }, 500);
