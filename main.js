@@ -80,7 +80,7 @@ var generateDogTable = (data) => {
         tdNeutered.textContent = data[i][8];
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal" onclick="generateOwnersData">Click here</a>';
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal" onclick="generateOwnersData()">Click here</a>';
         // tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
