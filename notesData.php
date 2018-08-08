@@ -7,7 +7,7 @@
     if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
-    echo $_REQUEST['type'];
+    echo "Hello";
     // $data = $conn->query("select * from ".$_REQUEST['type']."Notes where ".$_REQUEST['type']."sFk=".$_REQUEST['id'].";");
     // $id = $data->fetch_assoc();
     // $newData = $conn->query("select * from owners where id=".$id["ownersFk"].";");
