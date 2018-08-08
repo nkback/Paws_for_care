@@ -27,6 +27,14 @@
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>    
 
     <script src="../main.js"></script>
+    <style>
+        .dataTables_filter {
+            width: 50%;
+            float: left;
+            text-align: left;
+        }    
+    </style>
+
     <!-- Javascript -->
     <script>
         $(document).ready(function(){
