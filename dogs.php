@@ -286,9 +286,9 @@
               
               <!-- Modal body -->
               <div class="modal-body">
-                Name:<br>
-                <span id="ownerName"></span><br>
-                Address:<br>
+                <b>Name:</b><br>
+                <span id="ownerName"></span><br><br>
+                <b>Address:</b><br>
                 <span id="ownerAddress"></span>
               </div>
               
