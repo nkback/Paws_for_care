@@ -17,14 +17,14 @@
             <li id="exoticsNav" class="nav-item">
                 <a class="nav-link" href="exotics.php">Exotics</a>
             </li>
-            <li id="contactNav" class="nav-item">
-                <a class="nav-link" href="contact.php">Contact</a>
-            </li>
             <li id="ownersNav" class="nav-item">
                 <a class="nav-link" href="#">Owners</a>
             </li>
             <li id="animalsNav" class="nav-item">
                 <a class="nav-link" href="#">Animals</a>
+            </li>
+            <li id="contactNav" class="nav-item">
+                <a class="nav-link" href="contact.php">Contact</a>
             </li>
             <li id="aboutNav" class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
