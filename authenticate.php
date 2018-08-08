@@ -12,7 +12,7 @@
     $password = $_POST["password"];
     if(strrev($password) == $username){
         $_SESSION["random"] = "Unset";
-         $data = $conn->query("SELECT * FROM owners WHERE username='admin' LIMIT 1");
+         $data = $conn->query("SELECT * FROM owners WHERE username='$username' LIMIT 1");
         $row = mysqli_fetch_assoc($data);
         //$_SESSION["login"] = true;
         $_SESSION["random"] = $row["id"];
