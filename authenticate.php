@@ -12,16 +12,18 @@
     $password = $_POST["password"];
     if(strrev($password) == $username){
          $data = $conn->query("selct * from owners where username=".$username.";");
-         while($row = $data->fetch_assoc()){
-    //         $_SESSION["login"] = true;
-    //         if($row["admin"]){
-    //             $_SESSION["admin"] = true;
-    //         }
-    //         else{
-    //             $_SESSION["admin"] = false;
-    //             $_SESSION["username"] = $row["id"];
-    //         }
-         }
+         if($data->num_rows != 0){
+            while($row = $data->fetch_assoc()){
+        //         $_SESSION["login"] = true;
+        //         if($row["admin"]){
+        //             $_SESSION["admin"] = true;
+        //         }
+        //         else{
+        //             $_SESSION["admin"] = false;
+        //             $_SESSION["username"] = $row["id"];
+        //         }
+            }
+        }
     }
     // if(!isset($_SESSION["login"])){
     //     $_SESSION["error"] = true;
