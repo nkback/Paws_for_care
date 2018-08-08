@@ -22,6 +22,7 @@
                  success: function(output){
 		     var data = JSON.parse(output);
                      generateDogTable(data);
+                    
                  }
              })
             //generateDogTable(animalData.dogs);

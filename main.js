@@ -15,7 +15,7 @@ $.getJSON("../animals.json", function(jsonData){
 //         generateDogTable(data);
 //     }
 // })
-$('#ownersModal').click(function(){
+var generateOwnersData = () => {
     var id = $(this).attr("id");
     var type = $(this).attr("data-animal");
     $.ajax({
@@ -31,7 +31,8 @@ $('#ownersModal').click(function(){
             console.log(output);
         }
     });
-})
+}
+
 var generateDogTable = (data) => {
     for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
@@ -79,7 +80,7 @@ var generateDogTable = (data) => {
         tdNeutered.textContent = data[i][8];
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal">Click here</a>';
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal" onclick="generateOwnersData">Click here</a>';
         // tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
