@@ -14,8 +14,8 @@
         $_SESSION["random"] = "Unset";
          $data = $conn->query("SELECT * FROM owners WHERE username='$username' LIMIT 1");
         $row = mysqli_fetch_assoc($data);
-        //$_SESSION["login"] = true;
-        $_SESSION["random"] = $row["id"];
+        $_SESSION["login"] = true;
+        $_SESSION["random"] = $row["username"];
          //if($data){
             // if($data->num_rows != 0){
             //     while($row = $data->fetch_assoc()){
