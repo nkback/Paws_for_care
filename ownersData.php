@@ -1,4 +1,5 @@
 <?php
+//	echo "Hello";
     $servername = "127.0.0.1";
     $username = "root";
     $password = "tracker";
@@ -7,8 +8,9 @@
     if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
+//	echo $_GET['type'];
     $data = $conn->query("select ownersFk from ".$_REQUEST['type']."Owners where dogsFk=".$_REQUEST['id'].";");
     $id = $data->fetch_assoc();
-    $newData = $conn->query("select * from owners where id=".$id["id"].";");
+    $newData = $conn->query("select * from owners where id=".$id["ownersFk"].";");
     echo json_encode($newData->fetch_all());
 ?>

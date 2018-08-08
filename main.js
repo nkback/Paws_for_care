@@ -16,8 +16,8 @@ $.getJSON("../animals.json", function(jsonData){
 //     }
 // })
 var generateOwnersData = () => {
-    var id = $(this).attr("id");
-    var type = $(this).attr("data-animal");
+    var type = event.path[0].attributes["data-animal"].nodeValue;
+    var id = event.path[0].attributes["id"].nodeValue;
     $.ajax({
         url:'/ownersData.php',
         data: 
@@ -25,15 +25,19 @@ var generateOwnersData = () => {
                 id: id,
                 type: type
             },
-        type: 'get',
+        method: 'GET',
         success: function(output){
-            // var data = JSON.parse(output);
-            console.log(output);
-        }
+            var data = JSON.parse(output);
+            console.log(data);
+        },
+        error: function(response){
+		console.log(response);
+	}
     });
 }
 
 var generateDogTable = (data) => {
+	console.log("Here");
     for(let i = 0; i < data.length; i++){
         var tr = document.createElement('tr');
         let tdName = document.createElement('td');
@@ -66,21 +70,20 @@ var generateDogTable = (data) => {
         tdSize.innerHTML = (data[i][6]==1) ?'<i class="fas fa-check" style="color: green"></i>': '<i class="fas fa-times" style="color: red"></i>';
 
         tr.appendChild(tdSize);                
-        let tdLicensed = document.createElement('td');
+        let tdLicensed1 = document.createElement('td');
 //        tdLicensed.textContent = data[i].licensed;
-        // let bday = new Date(data[i][7]);
-        // let diff = Date.now() - bday.getTime();
-        // let ageDate = new Date(diff);
-        // let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
-
-        tdLicensed.textContent = data[i][7];
-        tr.appendChild(tdLicensed);
+        let bday = new Date(data[i][7]);
+        let diff = Date.now() - bday.getTime();
+        let ageDate = new Date(diff);
+        let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
+        tdLicensed1.textContent = ageYears;
+        tr.appendChild(tdLicensed1);
         let tdNeutered = document.createElement('td');
 //        tdNeutered.textContent = data[i].neutered;
         tdNeutered.textContent = data[i][8];
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
-        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal" onclick="generateOwnersData()">Click here</a>';
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#ownerModal" onclick="generateOwnersData(event)">Click here</a>';
         // tdOwners.textContent = data[i].owners;
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
