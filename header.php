@@ -47,7 +47,7 @@
                         },
                         "dom": '<"pull-left"f><"pull-right"l>tip',
                         "columnDefs": [
-                            { "orderable": false, "targets": 9 }
+                            { "orderable": false, "targets": [8,9] }
                         ]
                     });
                 }, 500);
