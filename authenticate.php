@@ -11,8 +11,8 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
     if(strrev($password) == $username){
-         $conn->query("selct * from owners where username=".$username.";");
-         while($row = $conn->fetch_assoc()){
+         $data = $conn->query("selct * from owners where username=".$username.";");
+         while($row = $data->fetch_assoc()){
     //         $_SESSION["login"] = true;
     //         if($row["admin"]){
     //             $_SESSION["admin"] = true;
