@@ -57,7 +57,7 @@
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form type="post" action="/authenticate.php/">
+            <form type="post" action="/authenticate.php">
 
                 <!-- Modal Header -->
                 <div class="modal-header">
