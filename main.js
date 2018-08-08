@@ -74,8 +74,8 @@ var generateDogTable = (data) => {
         tr.appendChild(tdSize);                
         let tdLicensed1 = document.createElement('td');
 //        tdLicensed.textContent = data[i].licensed;
-        let bday = new Date(data[i][7]);
-        let diff = Date.now() - bday.getTime();
+        let birthday = new Date(data[i][7]);
+        let diff = Date.now() - birthday.getTime();
         let ageDate = new Date(diff);
         let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
         tdLicensed1.textContent = ageYears;
@@ -129,7 +129,11 @@ var generateCatTable = (data) => {
         tr.appendChild(tdSize);                
         let tdNeutered = document.createElement('td');
         // tdNeutered.textContent = data[i].neutered;
-        tdNeutered.textContent = data[i][7];
+        let birthday = new Date(data[i][7]);
+        let diff = Date.now() - birthday.getTime();
+        let ageDate = new Date(diff);
+        let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
+        tdNeutered.textContent = ageYears;
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
         // tdOwners.textContent = data[i].owners;
@@ -164,7 +168,11 @@ var generateExoticTable = (data) => {
 
         tr.appendChild(tdShots1);                  
         let tdAge = document.createElement('td');
-        tdAge.textContent = data[i][5];
+        let birthday = new Date(data[i][5]);
+        let diff = Date.now() - birthday.getTime();
+        let ageDate = new Date(diff);
+        let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
+        tdAge.textContent = ageYears;
         tr.appendChild(tdAge);
         
         let tdSize = document.createElement('td');
