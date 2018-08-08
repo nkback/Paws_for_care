@@ -70,6 +70,23 @@
                     });
                 }, 500);
             }
+            else if($(".exotic-table").length){
+                setTimeout(function(){ 
+                    $('.exotic-table').DataTable({
+                        "info": false,
+                        "bLengthChange": false,
+                        "bAutoWidth": false,
+                        "language": {
+                            "search": "",
+                            "searchPlaceholder": "filter"
+                        },
+                        "dom": '<"pull-left"f><"pull-right"l>tip',
+                        "columnDefs": [
+                            { "orderable": false, "targets": [3,5,6] }
+                        ]
+                    });
+                }, 500);
+            }
             // if($(".table").length){
             //     setTimeout(function(){ 
             //         $('.table').DataTable({
