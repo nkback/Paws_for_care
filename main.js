@@ -41,7 +41,7 @@ var generateNotesData = () => {
     var type = event.path[0].attributes["data-animal"].nodeValue;
     var id = event.path[0].attributes["id"].nodeValue;
     $.ajax({
-        url:'/ownersData.php',
+        url:'/notesData.php',
         data: 
             {
                 id: id,
