@@ -49,10 +49,10 @@ var generateNotesData = () => {
             },
         method: 'GET',
         success: function(output){
-            var data = JSON.parse(output);
+            var data1 = JSON.parse(output);
             // $("#ownerName").text(data[0][1] + " " + data[0][2]);
             // $("#ownerAddress").html(data[0][4] + " " + data[0][5] + "<br>" + data[0][6] + ", " + data[0][7] + " " + data[0][8]);
-            console.log(data);
+            console.log(data1);
         },
         error: function(response){
 		    console.log(response);
