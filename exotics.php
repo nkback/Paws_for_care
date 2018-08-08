@@ -208,7 +208,10 @@
               
               <!-- Modal body -->
               <div class="modal-body">
-                Coming soon..
+                <b>Name:</b><br>
+                <span id="ownerName"></span><br><br>
+                <b>Address:</b><br>
+                <span id="ownerAddress"></span>
               </div>
               
               <!-- Modal footer -->

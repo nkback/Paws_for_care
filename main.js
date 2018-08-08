@@ -169,11 +169,11 @@ var generateExoticTable = (data) => {
         
         let tdSize = document.createElement('td');
         // tdSize.textContent = data[i].owners;
-        tdSize.innerHTML = '<a href="#" class="ownersModal" data-toggle="modal" data-target="#ownerModal">Click here</a>';
+        tdSize.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="exotics" data-target="#ownerModal" onclick="generateOwnersData(event)">Click here</a>';
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
         // tdLicensed.textContent = data[i].notes;
-        tdLicensed.innerHTML = '<a href="#" class="notesModal" data-toggle="modal" data-target="#notesModal">Click here</a>';
+        tdLicensed.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="exotics" data-target="#notesModal">Click here</a>';
         tr.appendChild(tdLicensed);                
         document.getElementById("exoticTable").appendChild(tr);                
     }
