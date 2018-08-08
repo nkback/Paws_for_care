@@ -312,7 +312,7 @@
               
               <!-- Modal body -->
               <div class="modal-body">
-                Coming soon..
+                <span id="noteSpan"></span>
               </div>
               
               <!-- Modal footer -->

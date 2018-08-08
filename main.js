@@ -53,6 +53,13 @@ var generateNotesData = () => {
             // $("#ownerName").text(data[0][1] + " " + data[0][2]);
             // $("#ownerAddress").html(data[0][4] + " " + data[0][5] + "<br>" + data[0][6] + ", " + data[0][7] + " " + data[0][8]);
             console.log(data1);
+            if(data.length == 0)
+                $("#noteSpan").text("There are no notes for this animal.");
+                
+            for (let i = 0; i < data1.length; i++){
+                $("#noteSpan").append(data1[i][2] + " -- " + data[i][3] + "<br><br>" + data[i][4] + "<br><br><br>");
+            
+            }
         },
         error: function(response){
 		    console.log(response);
