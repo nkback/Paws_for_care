@@ -53,8 +53,8 @@ var generateDogTable = (data) => {
 //        tdLicensed.textContent = data[i].licensed;
         let birthday = new Date(data[i][7]);
         birthday = Date.now() - birthday.getTime();
-        birthday = new Date(diff);
-        birthday = Math.abs(ageDate.getUTCFullYear() - 1970);
+        birthday = new Date(birthday);
+        birthday = Math.abs(birthday.getUTCFullYear() - 1970);
 
         tdLicensed.textContent = birthday;
         tr.appendChild(tdLicensed);

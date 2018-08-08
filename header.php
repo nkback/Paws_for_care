@@ -33,9 +33,8 @@
             if($(".table").length){
                 setTimeout(function(){ 
                     $('.table').DataTable({
-                        "ordering": false,
                         "info": false,
-                        "searching": false,
+//                        "searching": false,
                         "bLengthChange": false,
                         "bAutoWidth": false
                     });
