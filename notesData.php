@@ -7,8 +7,8 @@
     if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
-    $data = $conn->query("select ownersFk from ".$_REQUEST['type']."Owners where ".$_REQUEST['type']."Fk=".$_REQUEST['id'].";");
-    $id = $data->fetch_assoc();
-    $newData = $conn->query("select * from owners where id=".$id["ownersFk"].";");
+    $data = $conn->query("select * from ".$_REQUEST['type']."Notes where ".$_REQUEST['type']."Fk=".$_REQUEST['id'].";");
+    // $id = $data->fetch_assoc();
+    // $newData = $conn->query("select * from owners where id=".$id["ownersFk"].";");
     echo json_encode($newData->fetch_all());
 ?>

@@ -37,6 +37,28 @@ var generateOwnersData = () => {
 	    }
     });
 }
+var generateNotesData = () => {
+    var type = event.path[0].attributes["data-animal"].nodeValue;
+    var id = event.path[0].attributes["id"].nodeValue;
+    $.ajax({
+        url:'/ownersData.php',
+        data: 
+            {
+                id: id,
+                type: type
+            },
+        method: 'GET',
+        success: function(output){
+            var data = JSON.parse(output);
+            // $("#ownerName").text(data[0][1] + " " + data[0][2]);
+            // $("#ownerAddress").html(data[0][4] + " " + data[0][5] + "<br>" + data[0][6] + ", " + data[0][7] + " " + data[0][8]);
+            console.log(data);
+        },
+        error: function(response){
+		    console.log(response);
+	    }
+    });
+}
 
 var generateDogTable = (data) => {
 	console.log("Here");
@@ -90,7 +112,7 @@ var generateDogTable = (data) => {
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
         // tdNotes.textContent = data[i].notes;
-        tdNotes.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dogs" data-target="#notesModal">Click here</a>';
+        tdNotes.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="dog" data-target="#notesModal" onclick="generateNotesData(event)">Click here</a>';
         tr.appendChild(tdNotes);
         document.getElementById("dogTable").appendChild(tr);                
     }
@@ -141,7 +163,7 @@ var generateCatTable = (data) => {
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
         // tdNotes.textContent = data[i].notes;
-        tdNotes.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="cats" data-target="#notesModal">Click here</a>';
+        tdNotes.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="cat" data-target="#notesModal" onclick="generateNotesData(event)">Click here</a>';
         tr.appendChild(tdNotes);                
         document.getElementById("catTable").appendChild(tr);                
     }
@@ -181,7 +203,7 @@ var generateExoticTable = (data) => {
         tr.appendChild(tdSize);                
         let tdLicensed = document.createElement('td');
         // tdLicensed.textContent = data[i].notes;
-        tdLicensed.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="exotics" data-target="#notesModal">Click here</a>';
+        tdLicensed.innerHTML = '<a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="exotic" data-target="#notesModal" onclick="generateNotesData(event)">Click here</a>';
         tr.appendChild(tdLicensed);                
         document.getElementById("exoticTable").appendChild(tr);                
     }
