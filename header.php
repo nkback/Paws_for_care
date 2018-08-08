@@ -28,11 +28,8 @@
 
     <script src="../main.js"></script>
     <style>
-        .dataTables_filter {
-            width: 50%;
-            float: left;
-            text-align: left;
-        }    
+        .pull-left{float:left!important;}
+        .pull-right{float:right!important;}    
     </style>
 
     <!-- Javascript -->
@@ -42,13 +39,13 @@
                 setTimeout(function(){ 
                     $('.table').DataTable({
                         "info": false,
-//                        "searching": false,
                         "bLengthChange": false,
                         "bAutoWidth": false,
                         "language": {
                             "search": "",
-                            "searchPlaceholder": "filter",
-                        }
+                            "searchPlaceholder": "filter"
+                        },
+                        "dom": '<"pull-left"f><"pull-right"l>tip'
                     });
                 }, 500);
             }
