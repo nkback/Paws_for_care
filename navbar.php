@@ -59,13 +59,18 @@
         
             <!-- Modal Header -->
             <div class="modal-header">
-            <h4 class="modal-title" style="margin: auto">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
             <!-- Modal body -->
             <div class="modal-body">
-                ...here
+                <form type="POST" action="authenticate.php">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                </form>
             </div>
             
             <!-- Modal footer -->
