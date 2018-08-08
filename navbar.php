@@ -20,9 +20,16 @@
             <li id="contactNav" class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
+            <li id="ownersNav" class="nav-item">
+                <a class="nav-link" href="#">Owners</a>
+            </li>
+            <li id="animalsNav" class="nav-item">
+                <a class="nav-link" href="#">Animals</a>
+            </li>
             <li id="aboutNav" class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
             </li>
+            
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown link
