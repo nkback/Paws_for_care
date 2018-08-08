@@ -73,6 +73,5 @@
             // $('.active').removeClass('active');
             $('#exoticsNav').addClass('active');
         }
-        console.log(queryString[queryString.length-1]);
     });
 </script>
