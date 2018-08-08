@@ -56,28 +56,28 @@
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-        
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Login</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form type="POST" action="authenticate.php">
+            <form type="POST" action="authenticate.php">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
                     <label for="username">Username:</label>
                     <input id="username" name="username" type="text" class="form-control">
                     <label for="password">Password:</label>
                     <input id="password" name="password" type="password" class="form-control">
-                </form>
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
