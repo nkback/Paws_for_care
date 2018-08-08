@@ -67,9 +67,9 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <label for="username">Username:</label>
-                    <input id="username" name="username" type="text" class="form-control">
+                    <input id="username" name="username" type="text" class="form-control" required>
                     <label for="password">Password:</label>
-                    <input id="password" name="password" type="password" class="form-control">
+                    <input id="password" name="password" type="password" class="form-control" required>
                 </div>
                 
                 <!-- Modal footer -->
