@@ -37,7 +37,7 @@
         $(document).ready(function(){
             if($(".dog-table").length){
                 setTimeout(function(){ 
-                    $('.table').DataTable({
+                    $('.dog-table').DataTable({
                         "info": false,
                         "bLengthChange": false,
                         "bAutoWidth": false,
