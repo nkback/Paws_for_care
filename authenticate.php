@@ -11,11 +11,14 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
     if(strrev($password) == $username){
+        $_SESSION["random"] = "Unset";
          $data = $conn->query("SELECT * FROM owners WHERE username='$username';");
          if($data){
             // if($data->num_rows != 0){
                 while($row = $data->fetch_assoc()){
                     $_SESSION["login"] = true;
+                    $_SESSION["random"] = "Waht the hell";
+
             //         if($row["admin"]){
             //             $_SESSION["admin"] = true;
             //         }
@@ -26,7 +29,6 @@
                 }
             // }
             // else{
-                $_SESSION["random"] = "Waht the hell";
             // }
         }
     }
