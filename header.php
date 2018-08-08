@@ -45,10 +45,41 @@
                             "search": "",
                             "searchPlaceholder": "filter"
                         },
-                        "dom": '<"pull-left"f><"pull-right"l>tip'
+                        "dom": '<"pull-left"f><"pull-right"l>tip',
+                        "columnDefs": [
+                            { "orderable": false, "targets": 9 }
+                        ]
                     });
                 }, 500);
             }
+            // if($(".table").length){
+            //     setTimeout(function(){ 
+            //         $('.table').DataTable({
+            //             "info": false,
+            //             "bLengthChange": false,
+            //             "bAutoWidth": false,
+            //             "language": {
+            //                 "search": "",
+            //                 "searchPlaceholder": "filter"
+            //             },
+            //             "dom": '<"pull-left"f><"pull-right"l>tip'
+            //         });
+            //     }, 500);
+            // }
+            // if($(".table").length){
+            //     setTimeout(function(){ 
+            //         $('.table').DataTable({
+            //             "info": false,
+            //             "bLengthChange": false,
+            //             "bAutoWidth": false,
+            //             "language": {
+            //                 "search": "",
+            //                 "searchPlaceholder": "filter"
+            //             },
+            //             "dom": '<"pull-left"f><"pull-right"l>tip'
+            //         });
+            //     }, 500);
+            // }
         });
     </script>
 </head>
