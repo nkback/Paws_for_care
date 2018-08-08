@@ -45,7 +45,7 @@
             <li class="nav-item">
                 <?php 
                 if(!$_SESSION["login"])
-                    echo '<a class="nav-link" href="authenticate.php">Login</a>';
+                    echo '<a class="nav-link" data-toggle="modal" data-target="loginModal" href="#">Login</a>';
                 else
                     echo '<a class="nav-link" href="logout.php">Logout</a>';
                 ?>
