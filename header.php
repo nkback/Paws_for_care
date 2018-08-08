@@ -36,7 +36,10 @@
                         "info": false,
 //                        "searching": false,
                         "bLengthChange": false,
-                        "bAutoWidth": false
+                        "bAutoWidth": false,
+                        "oLanguage": {
+                            "sSearch": "your-text-here"
+                        }
                     });
                 }, 500);
             }
