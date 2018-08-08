@@ -209,7 +209,7 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <table class="table">
+            <table class="table cat-table">
                 <thead>
                     <!-- <tr>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
@@ -228,9 +228,9 @@
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="declawed">Declawed <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="declawed">Declawed <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
                         <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
