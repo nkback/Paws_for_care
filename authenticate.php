@@ -13,7 +13,7 @@
     if(strrev($password) == $username){
          $data = $conn->query("SELECT * FROM owners WHERE username='$username';");
          if($data){
-            if($data->num_rows != 0){
+            // if($data->num_rows != 0){
                 while($row = $data->fetch_assoc()){
                     $_SESSION["login"] = true;
             //         if($row["admin"]){
@@ -24,10 +24,10 @@
             //             $_SESSION["username"] = $row["id"];
             //         }
                 }
-            }
-            else{
+            // }
+            // else{
                 $_SESSION["random"] = "Waht the hell";
-            }
+            // }
         }
     }
     // if(!isset($_SESSION["login"])){
