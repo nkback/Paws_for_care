@@ -53,6 +53,7 @@ var generateNotesData = () => {
             // $("#ownerName").text(data[0][1] + " " + data[0][2]);
             // $("#ownerAddress").html(data[0][4] + " " + data[0][5] + "<br>" + data[0][6] + ", " + data[0][7] + " " + data[0][8]);
             console.log(data1);
+            $("#noteSpan").html("");
             if(data1.length == 0)
                 $("#noteSpan").text("There are no notes for this animal.");
 
