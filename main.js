@@ -57,7 +57,7 @@ var generateNotesData = () => {
                 $("#noteSpan").text("There are no notes for this animal.");
 
             for (let i = 0; i < data1.length; i++){
-                $("#noteSpan").append(data1[i][2] + " -- " + data[i][3] + "<br><br>" + data[i][4] + "<br><br><br>");
+                $("#noteSpan").append(data1[i][2] + " -- " + data1[i][3] + "<br><br>" + data1[i][4] + "<br><br><br>");
             
             }
         },
