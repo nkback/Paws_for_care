@@ -25,6 +25,9 @@
             //         }
                 }
             }
+            else{
+                $_SESSION["random"] = "Waht the hell";
+            }
         }
     }
     // if(!isset($_SESSION["login"])){
