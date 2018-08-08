@@ -35,7 +35,7 @@
     <!-- Javascript -->
     <script>
         $(document).ready(function(){
-            console.log($(".dog-table").length);
+            console.log($(".table").length);
             if($(".dog-table").length){
                 setTimeout(function(){ 
                     $('.dog-table').DataTable({
