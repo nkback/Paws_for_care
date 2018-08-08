@@ -133,7 +133,7 @@ var generateCatTable = (data) => {
         tr.appendChild(tdNeutered);                
         let tdOwners = document.createElement('td');
         // tdOwners.textContent = data[i].owners;
-        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="cats" data-target="#ownerModal">Click here</a>';
+        tdOwners.innerHTML = '<a href="#" class="ownersModal" id="'+data[i][0]+'" data-toggle="modal" data-animal="cats" data-target="#ownerModal" onclick="generateOwnersData(event)">Click here</a>';
         tr.appendChild(tdOwners);                
         let tdNotes = document.createElement('td');
         // tdNotes.textContent = data[i].notes;
