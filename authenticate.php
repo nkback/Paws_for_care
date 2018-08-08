@@ -10,6 +10,7 @@
     session_start();
     $username = $_POST["username"];
     $password = $_POST["password"];
+    $conn->query("select * from owners where username=".$username.";");
     // if(strrev($password) == $username){
     //     $conn->query("selct * from owners where username=".$username.";");
     //     while($row = $conn->fetch_assoc()){
