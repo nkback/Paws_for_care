@@ -14,7 +14,7 @@
          $data = $conn->query("selct * from owners where username=".$username.";");
          if($data->num_rows != 0){
             while($row = $data->fetch_assoc()){
-        //         $_SESSION["login"] = true;
+                $_SESSION["login"] = true;
         //         if($row["admin"]){
         //             $_SESSION["admin"] = true;
         //         }
