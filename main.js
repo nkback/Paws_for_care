@@ -52,11 +52,11 @@ var generateDogTable = (data) => {
         let tdLicensed = document.createElement('td');
 //        tdLicensed.textContent = data[i].licensed;
         let birthday = new Date(data[i][7]);
-        birthday = Date.now() - birthday.getTime();
-        birthday = new Date(birthday);
-        birthday = Math.abs(birthday.getUTCFullYear() - 1970);
+        let diff = Date.now() - birthday.getTime();
+        let ageDate = new Date(diff);
+        let ageYears = Math.abs(ageDate.getUTCFullYear() - 1970);
 
-        tdLicensed.textContent = birthday;
+        tdLicensed.textContent = ageYears;
         tr.appendChild(tdLicensed);
         let tdNeutered = document.createElement('td');
 //        tdNeutered.textContent = data[i].neutered;
