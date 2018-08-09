@@ -98,8 +98,12 @@
                                             }
                                         ?>
                                         <?php foreach($data2 as $note): ?>
+                                            <?php 
+                                                $date = new DateTime($note[3]);
+                                                $formattedDate = $data->format('m-d-Y');
+                                            ?>
 
-                                            <b><?=$note[3]?> | <?=$note[2]?></b><br><br>
+                                            <b><?=$$formattedDate?> | <?=$note[2]?></b><br><br>
                                             <?=$note[4]?><br><br><br>
                                         <?php endforeach; ?>
                                     </div>
