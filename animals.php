@@ -14,8 +14,8 @@
     SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$userId UNION
     SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=$userId;";
 
-    $animals = $conn->query($animalQuery);
-    $animalResults = $animals->fetch_all();
+    // $animals = $conn->query($animalQuery);
+    // $animalResults = $animals->fetch_all();
 ?>
 <body>
     <?php include 'navbar.php';?>
