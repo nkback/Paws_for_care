@@ -27,11 +27,11 @@
                     <a class="nav-link" href="exotics.php">Exotics</a>
                 </li>
                 <li id="ownersNav" class="nav-item">
-                    <a class="nav-link" href="#">Owners</a>
+                    <a class="nav-link" href="owners.php">Owners</a>
                 </li>
             <?php elseif($_SESSION["login"]) : ?>
                 <li id="animalsNav" class="nav-item">
-                    <a class="nav-link" href="#">Animals</a>
+                    <a class="nav-link" href="animals.php">Pets</a>
                 </li>
             <?php endif; ?>
             <li id="contactNav" class="nav-item">
