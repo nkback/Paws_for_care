@@ -102,9 +102,11 @@
                                             </thead>
                                             <tbody>
                                                 <?php foreach($animalResults as $animalData): ?>
-                                                    <td><?=$animalData[0]?></td>
-                                                    <td><?=$animalData[1]?></td>
-                                                    <td><?=$animalData[2]?></td>
+                                                    <tr>
+                                                        <td><?=$animalData[0]?></td>
+                                                        <td><?=$animalData[1]?></td>
+                                                        <td><?=$animalData[2]?></td>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
