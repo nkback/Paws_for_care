@@ -86,6 +86,23 @@
                     });
                 }, 500);
             }
+            else if($(".owner-table").length){
+                setTimeout(function(){ 
+                    $('.owner-table').DataTable({
+                        "info": false,
+                        "bLengthChange": false,
+                        "bAutoWidth": false,
+                        "language": {
+                            "search": "",
+                            "searchPlaceholder": "filter"
+                        },
+                        "dom": '<"pull-left"f><"pull-right"l>tip',
+                        "columnDefs": [
+                            { "orderable": false, "targets": [7] }
+                        ]
+                    });
+                }, 1000);
+            }
             // if($(".table").length){
             //     setTimeout(function(){ 
             //         $('.table').DataTable({

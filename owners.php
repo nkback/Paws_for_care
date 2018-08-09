@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <table class="table dog-table">
+            <table class="table owner-table">
                 <thead>
                     <!-- <tr>
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="name" type="text" placeholder="filter" class="form-control"></div></th>
