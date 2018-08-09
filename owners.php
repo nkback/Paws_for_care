@@ -149,54 +149,54 @@
             </table>
         </div>
     </div>
-    <div id="ownerModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <!-- <div id="ownerModal" class="modal fade" role="dialog"> -->
+        <!-- <div class="modal-dialog"> -->
+            <!-- <div class="modal-content"> -->
             
               <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Owner Modal</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
+              <!-- <div class="modal-header"> -->
+                <!-- <h4 class="modal-title">Owner Modal</h4> -->
+                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+              <!-- </div> -->
               
               <!-- Modal body -->
-              <div class="modal-body">
-                <b>Name:</b><br>
-                <span id="ownerName"></span><br><br>
-                <b>Address:</b><br>
-                <span id="ownerAddress"></span>
-              </div>
+              <!-- <div class="modal-body"> -->
+                <!-- <b>Name:</b><br> -->
+                <!-- <span id="ownerName"></span><br><br> -->
+                <!-- <b>Address:</b><br> -->
+                <!-- <span id="ownerAddress"></span> -->
+              <!-- </div> -->
               
               <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+              <!-- <div class="modal-footer"> -->
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <!-- </div> -->
               
-            </div>
-        </div>
-    </div>
-    <div id="notesModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div id="notesModal" class="modal fade" role="dialog"> -->
+        <!-- <div class="modal-dialog"> -->
+            <!-- <div class="modal-content"> -->
             
               <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Notes Modal</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
+              <!-- <div class="modal-header"> -->
+                <!-- <h4 class="modal-title">Notes Modal</h4> -->
+                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+              <!-- </div> -->
               
               <!-- Modal body -->
-              <div class="modal-body">
-                <span id="noteSpan"></span>
-              </div>
+              <!-- <div class="modal-body"> -->
+                <!-- <span id="noteSpan"></span> -->
+              <!-- </div> -->
               
               <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+              <!-- <div class="modal-footer"> -->
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <!-- </div> -->
               
-            </div>
-        </div>
-    </div>
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
 </body>
 </html>
