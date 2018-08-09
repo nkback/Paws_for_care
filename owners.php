@@ -84,10 +84,15 @@
                                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
+                                        <?php 
+                                            if(count($data2)==0){
+                                                echo "There are no notes for this owner.";
+                                            }
+                                        ?>
                                         <?php foreach($data2 as $note): ?>
 
                                             <b><?=$note[3]?>|<?=$note[2]?></b><br><br>
-                                            <?=$note[4]?>
+                                            <?=$note[4]?><br><br><br>
                                         <?php endforeach; ?>
                                     </div>
                                     
