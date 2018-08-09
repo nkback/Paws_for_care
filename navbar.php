@@ -1,3 +1,10 @@
+<?php
+    if(isset($_SESSION["error"])){
+        echo "<div class='alert alert-danger'>";
+            echo $_SESSION["error"];
+        echo "</div>";
+    }
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php"><i class="fas fa-paw"></i> Paws To Care</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
