@@ -62,7 +62,30 @@
                             <td><?= $value[$city] ?></td>
                             <td><?= $value[$st] ?></td>
                             <td><?= $value[$zip] ?></td>
-                            <td><a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-target="#ownerModal">Click here</a></td>
+                            <td><a href="#" class="notesModal" id="<?=$value[$id]?>" data-toggle="modal" data-target="#notesModal<?=$key?>">Click here</a></td>
+                            <div id="notesModal<?=$key?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Notes Modal</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        Coming soon <?=$value[$id]?>
+                                    </div>
+                                    
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
