@@ -13,9 +13,7 @@
     $animalQuery = "SELECT cats.name AS `Name`, CONCAT(cats.breed, ' (Cat)') AS `Breed`, cats.sex AS `Sex` FROM catsOwners INNER JOIN cats ON cats.id=catsOwners.catsFk WHERE catsOwners.ownersFk=$userId UNION
     SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$userId UNION
     SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=$userId;";
-    echo $animalQuery;
-    $animals = $conn->query($animalQuery);
-    
+    $animals = $conn2->query($animalQuery);
     $animalResults = $animals->fetch_all();
 ?>
 <body>
