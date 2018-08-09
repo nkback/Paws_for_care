@@ -16,7 +16,7 @@
             <li id="homeNav" class="nav-item active">
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <?php if($_SESSION["admin"]) : ?>
+            <?php if($_SESSION["admin"] && $_SESSION["login"]) : ?>
                 <li id="dogsNav" class="nav-item">
                     <a class="nav-link" href="dogs.php">Dogs</a>
                 </li>
@@ -26,10 +26,10 @@
                 <li id="exoticsNav" class="nav-item">
                     <a class="nav-link" href="exotics.php">Exotics</a>
                 </li>
-            <?php elseif($_SESSION["login"]) : ?>
                 <li id="ownersNav" class="nav-item">
                     <a class="nav-link" href="#">Owners</a>
                 </li>
+            <?php elseif($_SESSION["login"]) : ?>
                 <li id="animalsNav" class="nav-item">
                     <a class="nav-link" href="#">Animals</a>
                 </li>
