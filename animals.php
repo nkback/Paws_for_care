@@ -8,12 +8,13 @@
         die("Connection failed: ".$conn->connect_error);
     }
     $userId = $_SESSION["userId"];
-    $animalQuery = "SELECT cats.name AS `Name`, CONCAT(cats.breed, ' (Cat)') AS `Breed`, cats.sex AS `Sex` FROM catsOwners INNER JOIN cats ON cats.id=catsOwners.catsFk WHERE catsOwners.ownersFk=$userId UNION
-    SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$userId UNION
-    SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=$userId;";
+    echo $userId;
+    // $animalQuery = "SELECT cats.name AS `Name`, CONCAT(cats.breed, ' (Cat)') AS `Breed`, cats.sex AS `Sex` FROM catsOwners INNER JOIN cats ON cats.id=catsOwners.catsFk WHERE catsOwners.ownersFk=$userId UNION
+    // SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$userId UNION
+    // SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=$userId;";
 
-    $animals = $conn->query($animalQuery);
-    $animalResults = $animals->fetch_all();
+    // $animals = $conn->query($animalQuery);
+    // $animalResults = $animals->fetch_all();
 ?>
 <body>
     <?php include 'navbar.php';?>
@@ -32,13 +33,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($animalResults as $animalData): ?>
+                <?php //foreach($animalResults as $animalData): ?>
                     <tr>
-                        <td><?=$animalData[0]?></td>
-                        <td><?=$animalData[1]?></td>
-                        <td><?=$animalData[2]?></td>
+                        <td><?//=$animalData[0]?></td>
+                        <td><?//=$animalData[1]?></td>
+                        <td><?//=$animalData[2]?></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php //endforeach; ?>
             </tbody>
         </table>
         </div>
