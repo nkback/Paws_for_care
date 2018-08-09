@@ -3,6 +3,7 @@
         echo "<div class='alert alert-danger alert-dismissible fade show' style='margin-bottom: 0'>";
             echo $_SESSION["error"] . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         echo "</div>";
+        unset($_SESSION['error']);
     }
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
