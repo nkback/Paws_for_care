@@ -80,37 +80,6 @@
                                 $animals = $conn->query($animalQuery);
                                 $animalResults = $animals->fetch_all();
                             ?>
-                            <div id="petsModal<?=$key?>" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                    
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Notes Modal</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;">
-                                                    <b><div style="grid-column: 0 / span 1; grid-row: 1 / span 1">Name</div></b>
-                                                    <b><div style="grid-column: 1 / span 1; grid-row: 1 / span 1">Breed</div></b>
-                                                    <b><div style="grid-column: 2 / span 1; grid-row: 1 / span 1">Sex</div></b>
-                                                <?php foreach($animalResults as $key => $animalData): ?>
-                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 0 / span 1"><?=$animalData[0]?></div>
-                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 1 / span 1"><?=$animalData[1]?></div>
-                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 2 / span 1"><?=$animalData[2]?></div>
-                                                <?php endforeach; ?>
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
-                            </div>
                             <div id="notesModal<?=$key?>" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -143,6 +112,38 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="petsModal<?=$key?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Notes Modal</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;">
+                                                    <b><div style="grid-column: 0 / span 1; grid-row: 1 / span 1">Name</div></b>
+                                                    <b><div style="grid-column: 1 / span 1; grid-row: 1 / span 1">Breed</div></b>
+                                                    <b><div style="grid-column: 2 / span 1; grid-row: 1 / span 1">Sex</div></b>
+                                                <?php foreach($animalResults as $key => $animalData): ?>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 0 / span 1"><?=$animalData[0]?></div>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 1 / span 1"><?=$animalData[1]?></div>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 2 / span 1"><?=$animalData[2]?></div>
+                                                <?php endforeach; ?>
+                                    </div>
+                                    
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
