@@ -97,9 +97,9 @@
                                                     <div style="grid-column: 1 / span 1; grid-row: 1 / span 1">Breed</div>
                                                     <div style="grid-column: 2 / span 1; grid-row: 1 / span 1">Sex</div>
                                                 <?php foreach($animalResults as $key => $animalData): ?>
-                                                    <div style="grid-row: <?=$key+1?> / span 1; grid-column: 0 / span 1"><?=$animalData[0]?></div>
-                                                    <div style="grid-row: <?=$key+1?> / span 1; grid-column: 1 / span 1"><?=$animalData[1]?></div>
-                                                    <div style="grid-row: <?=$key+1?> / span 1; grid-column: 2 / span 1"><?=$animalData[2]?></div>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 0 / span 1"><?=$animalData[0]?></div>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 1 / span 1"><?=$animalData[1]?></div>
+                                                    <div style="grid-row: <?=$key+2?> / span 1; grid-column: 2 / span 1"><?=$animalData[2]?></div>
                                                 <?php endforeach; ?>
                                     </div>
                                     
