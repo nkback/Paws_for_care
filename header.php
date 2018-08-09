@@ -87,7 +87,7 @@
                 }, 500);
             }
             else if($(".owner-table").length){
-                setTimeout(function(){ 
+                // setTimeout(function(){ 
                     $('.owner-table').DataTable({
                         "info": false,
                         "bLengthChange": false,
@@ -101,7 +101,7 @@
                             { "orderable": false, "targets": [7] }
                         ]
                     });
-                }, 1000);
+                // }, 1000);
             }
         });
     </script>

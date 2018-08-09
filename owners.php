@@ -91,7 +91,7 @@
                                         ?>
                                         <?php foreach($data2 as $note): ?>
 
-                                            <b><?=$note[3]?>|<?=$note[2]?></b><br><br>
+                                            <b><?=$note[3]?> | <?=$note[2]?></b><br><br>
                                             <?=$note[4]?><br><br><br>
                                         <?php endforeach; ?>
                                     </div>
