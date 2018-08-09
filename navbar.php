@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- <a class="navbar-brand" href="index.php"><i class="fas fa-paw"></i> Paws To Care</a> -->
-    <a class="navbar-brand" href="index.php"><i class="fas fa-paw"></i> <?php if(isset($_SESSION["random"])) echo $_SESSION["random"];?></a>
+    <a class="navbar-brand" href="index.php"><i class="fas fa-paw"></i> Paws To Care</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
