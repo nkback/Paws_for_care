@@ -33,21 +33,7 @@
                 <img class="d-block w-100" src="../images/dog.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Dogs</h1>
-                    <?php
-                    $servername = "127.0.0.1";
-                    $username = "root";
-                    $password = "tracker";
-                    $dbName = "paws-to-care-db";
-
-                    $conn = new mysqli($servername,$username,$password,$dbName);
-                    if($conn->connect_error){
-                        die("Connection failed: ".$conn->connect_error);
-                    }
-                    $data = $conn->query("select * from tester");
-                    $row = $data->fetch_assoc();
-                    echo "<h4>".$row["test_column"]."</h4>";
-                    ?>
-                    <!-- <h4>We Love Dogs</h4> -->
+                    <h4>We Love Dogs</h4>
                 </div>
             </div>
             <div class="carousel-item">
