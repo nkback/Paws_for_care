@@ -99,7 +99,7 @@
                                         ?>
                                         <?php foreach($data2 as $note): ?>
                                             <?php 
-                                                $date = new DateTime($note[3]);
+                                                $date = new DateTime(strtotime($note[3]));
                                                 $formattedDate = $data->format('m-d-Y');
                                             ?>
 
