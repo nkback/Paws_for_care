@@ -63,6 +63,15 @@
                             <td><?= $value[$st] ?></td>
                             <td><?= $value[$zip] ?></td>
                             <td><a href="#" class="notesModal" id="<?=$value[$id]?>" data-toggle="modal" data-target="#notesModal<?=$key?>">Click here</a></td>
+                            <?php
+                                $conn2 = new mysqli($servername,$username,$password,$dbName);
+                                if($conn2->connect_error){
+                                    die("Connection failed: ".$conn->connect_error);
+                                }
+                                // $data2 = $query->fetch_all();
+                                $query2 = $conn2->query("select * from ownerNotes where ownersFk=".$value[$id]." ORDER BY date;");
+                                $data2 = $query2->fetch_all();
+                            ?>
                             <div id="notesModal<?=$key?>" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -75,7 +84,11 @@
                                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        Coming soon <?=$value[$id]?>
+                                        <?php foreach($data2 as $note): ?>
+
+                                            <b><?=$note[3]?>|<?=$note[2]?></b><br><br>
+                                            <?=$note[4]?>
+                                        <?php endforeach; ?>
                                     </div>
                                     
                                     <!-- Modal footer -->
