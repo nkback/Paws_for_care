@@ -42,13 +42,13 @@
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
                     <!-- </tr> -->
                     <tr>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">First Name <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Last Name <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Address 1 <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="shots">Address 2 <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="licensed">City <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="neutered">State <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Zip <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="fname">First Name <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="lname">Last Name <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="add1">Address 1 <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="add2">Address 2 <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="city">City <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="st">State <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="zip">Zip <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>
                 </thead>
@@ -62,7 +62,7 @@
                             <td><?= $value[$city] ?></td>
                             <td><?= $value[$st] ?></td>
                             <td><?= $value[$zip] ?></td>
-                            <td>Click Here</td>
+                            <td><a href="#" class="notesModal" id="'+data[i][0]+'" data-toggle="modal" data-target="#ownerModal">Click here</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
