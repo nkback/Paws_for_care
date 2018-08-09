@@ -64,7 +64,7 @@
                             <td><?= $value[$st] ?></td>
                             <td><?= $value[$zip] ?></td>
                             <td><a href="#" class="notesModal" id="<?=$value[$id]?>" data-toggle="modal" data-target="#notesModal<?=$key?>">Click here</a></td>
-                            <td><a href="#" class="petsModal" id="<?=$value[$id]?>" data-toggle="modal" data-target="#petsModal<?=$key?>">Click here</a></td>
+                            <td><a href="#" class="petsModal" id="<?=$key?>" data-toggle="modal" data-target="#petsModal<?=$key?>">Click here</a></td>
                             <?php
                                 $conn2 = new mysqli($servername,$username,$password,$dbName);
                                 if($conn2->connect_error){
@@ -80,7 +80,29 @@
                                 $animals = $conn->query($animalQuery);
                                 $animalResults = $animals->fetch_all();
                             ?>
-                            
+                            <div id="petsModal<?=$key?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Notes Modal</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        coming soon...
+                                    </div>
+                                    
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
                             <div id="notesModal<?=$key?>" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
