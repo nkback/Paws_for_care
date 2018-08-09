@@ -92,7 +92,24 @@
                                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        coming soon...
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Breed</th>
+                                                    <th>Sex</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach($animalResults as $animalData): ?>
+                                                    <tr>
+                                                        <td><?=$animalData[0]?></td>
+                                                        <td><?=$animalData[1]?></td>
+                                                        <td><?=$animalData[2]?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                     
                                     <!-- Modal footer -->
