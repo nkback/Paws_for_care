@@ -119,5 +119,13 @@
             // $('.active').removeClass('active');
             $('#exoticsNav').addClass('active');
         }
+        else if(queryString[queryString.length-1] === 'animals.php'){
+            // $('.active').removeClass('active');
+            $('#animalsNav').addClass('active');
+        }
+        else if(queryString[queryString.length-1] === 'owners.php'){
+            // $('.active').removeClass('active');
+            $('#ownersNav').addClass('active');
+        }
     });
 </script>
