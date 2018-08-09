@@ -16,21 +16,24 @@
             <li id="homeNav" class="nav-item active">
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li id="dogsNav" class="nav-item">
-                <a class="nav-link" href="dogs.php">Dogs</a>
-            </li>
-            <li id="catsNav" class="nav-item">
-                <a class="nav-link" href="cats.php">Cats</a>
-            </li>
-            <li id="exoticsNav" class="nav-item">
-                <a class="nav-link" href="exotics.php">Exotics</a>
-            </li>
-            <li id="ownersNav" class="nav-item">
-                <a class="nav-link" href="#">Owners</a>
-            </li>
-            <li id="animalsNav" class="nav-item">
-                <a class="nav-link" href="#">Animals</a>
-            </li>
+            <?php if($_SESSION["admin"]) : ?>
+                <li id="dogsNav" class="nav-item">
+                    <a class="nav-link" href="dogs.php">Dogs</a>
+                </li>
+                <li id="catsNav" class="nav-item">
+                    <a class="nav-link" href="cats.php">Cats</a>
+                </li>
+                <li id="exoticsNav" class="nav-item">
+                    <a class="nav-link" href="exotics.php">Exotics</a>
+                </li>
+            <?php elseif($_SESSION["login"]) : ?>
+                <li id="ownersNav" class="nav-item">
+                    <a class="nav-link" href="#">Owners</a>
+                </li>
+                <li id="animalsNav" class="nav-item">
+                    <a class="nav-link" href="#">Animals</a>
+                </li>
+            <?php endif; ?>
             <li id="contactNav" class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
