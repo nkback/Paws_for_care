@@ -92,24 +92,15 @@
                                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Breed</th>
-                                                    <th>Sex</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php foreach($animalResults as $animalData): ?>
-                                                    <tr>
-                                                        <td><?=$animalData[0]?></td>
-                                                        <td><?=$animalData[1]?></td>
-                                                        <td><?=$animalData[2]?></td>
-                                                    </tr>
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;">
+                                                    <div style="grid-column: 0 / span 1">Name</div>
+                                                    <div style="grid-column: 1 / span 1">Breed</div>
+                                                    <div style="grid-column: 2 / span 1">Sex</div>
+                                                <?php foreach($animalResults as $key => $animalData): ?>
+                                                    <div style="grid-row: 1 / span 1"><?=$animalData[0]?></div>
+                                                    <div style="grid-row: 2 / span 1"><?=$animalData[1]?></div>
+                                                    <div style="grid-row: 3 / span 1"><?=$animalData[2]?></div>
                                                 <?php endforeach; ?>
-                                            </tbody>
-                                        </table>
                                     </div>
                                     
                                     <!-- Modal footer -->
