@@ -98,7 +98,7 @@
                         },
                         "dom": '<"pull-left"f><"pull-right"l>tip',
                         "columnDefs": [
-                            { "orderable": false, "targets": [7] }
+                            { "orderable": false, "targets": [7,8] }
                         ]
                     });
                 // }, 1000);
