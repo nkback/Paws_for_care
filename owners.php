@@ -93,9 +93,9 @@
                                     <!-- Modal body -->
                                     <div class="modal-body">
                                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;">
-                                                    <div style="grid-column: 0 / span 1; grid-row: 1 / span 1">Name</div>
-                                                    <div style="grid-column: 1 / span 1; grid-row: 1 / span 1">Breed</div>
-                                                    <div style="grid-column: 2 / span 1; grid-row: 1 / span 1">Sex</div>
+                                                    <b><div style="grid-column: 0 / span 1; grid-row: 1 / span 1">Name</div></b>
+                                                    <b><div style="grid-column: 1 / span 1; grid-row: 1 / span 1">Breed</div></b>
+                                                    <b><div style="grid-column: 2 / span 1; grid-row: 1 / span 1">Sex</div></b>
                                                 <?php foreach($animalResults as $key => $animalData): ?>
                                                     <div style="grid-row: <?=$key+2?> / span 1; grid-column: 0 / span 1"><?=$animalData[0]?></div>
                                                     <div style="grid-row: <?=$key+2?> / span 1; grid-column: 1 / span 1"><?=$animalData[1]?></div>
