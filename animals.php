@@ -33,13 +33,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php //foreach($animalResults as $animalData): ?>
+                <?php foreach($animalResults as $animalData): ?>
                     <tr>
-                        <td><?//=$animalData[0]?></td>
-                        <td><?//=$animalData[1]?></td>
-                        <td><?//=$animalData[2]?></td>
+                        <td><?=$animalData[0]?></td>
+                        <td><?=$animalData[1]?></td>
+                        <td><?=$animalData[2]?></td>
                     </tr>
-                <?php //endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
         </div>
