@@ -20,7 +20,7 @@
 <body>
     <?php include 'navbar.php';?>
     <div class="jumbotron text-center bg-info text-white">
-        <h1>Dogs</h1>
+        <h1>Owners</h1>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
@@ -42,29 +42,27 @@
                         <th scope="col"><div class="col-sm-12" style="padding-left: 0"><input data-key="notes" type="text" placeholder="filter" class="form-control"></div></th> -->
                     <!-- </tr> -->
                     <tr>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">Name <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Breed <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Sex <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="shots">Shots <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="licensed">Licensed <span id="arrow"></span></th>
-                        <th scope="col" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
-                        <th scope="col" style="cursor: pointer" class="sortable" data-key="size">Weight <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="name">First Name <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="breed">Last Name <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="sex">Address 1 <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="shots">Address 2 <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="licensed">City <span id="arrow"></span></th>
+                        <th scope="col" class="sortable" data-key="neutered">State <span id="arrow"></span></th>
+                        <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Zip <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>
                 </thead>
                 <tbody data-tableType="owner" id="ownersTabler">
                     <?php foreach($data as $key=>$value): ?>
                         <tr>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
-                            <td>Placeholder</td>
+                            <td><?= $value[$fname] ?></td>
+                            <td><?= $value[$lname] ?></td>
+                            <td><?= $value[$add1] ?></td>
+                            <td><?= $value[$add2] ?></td>
+                            <td><?= $value[$city] ?></td>
+                            <td><?= $value[$st] ?></td>
+                            <td><?= $value[$zip] ?></td>
+                            <td>Click Here</td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
