@@ -7,10 +7,10 @@
     if($conn2->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
-    $userId = 'userId';
-    $animalQuery = "SELECT cats.name AS `Name`, CONCAT(cats.breed, ' (Cat)') AS `Breed`, cats.sex AS `Sex` FROM catsOwners INNER JOIN cats ON cats.id=catsOwners.catsFk WHERE catsOwners.ownersFk=$_SESSION[$userId] UNION
-    SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$_SESSION[$userId] UNION
-    SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=".$_SESSION[$userId].";";
+    $userId = $_SESSION["userId"];
+    $animalQuery = "SELECT cats.name AS `Name`, CONCAT(cats.breed, ' (Cat)') AS `Breed`, cats.sex AS `Sex` FROM catsOwners INNER JOIN cats ON cats.id=catsOwners.catsFk WHERE catsOwners.ownersFk=$userId UNION
+    SELECT dogs.name, CONCAT(dogs.breed, ' (Dog)'), dogs.sex FROM dogsOwners INNER JOIN dogs ON dogs.id=dogsOwners.dogsFk WHERE dogsOwners.ownersFk=$userId UNION
+    SELECT exotics.name, CONCAT(exotics.species, ' (Exotic)'), exotics.sex FROM exoticsOwners INNER JOIN exotics ON exotics.id=exoticsOwners.exoticsFk WHERE exoticsOwners.ownersFk=$userId;";
 
     $animals = $conn->query($animalQuery);
     $animalResults = $animals->fetch_all();
