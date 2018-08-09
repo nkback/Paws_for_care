@@ -1,5 +1,5 @@
 <?php include 'header.php';
-        $servername = "127.0.0.1";
+            $servername = "127.0.0.1";
             $username = "root";
             $password = "tracker";
             $dbName = "paws-to-care-db";
