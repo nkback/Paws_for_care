@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION["error"])){
-        echo "<div class='alert alert-danger'>";
+        echo "<div class='alert alert-danger' style='margin-bottom: 0'>";
             echo $_SESSION["error"];
         echo "</div>";
     }
