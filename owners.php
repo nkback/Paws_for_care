@@ -50,23 +50,23 @@
                         <th scope="col" class="sortable" data-key="neutered">Neutered <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="age">Age <span id="arrow"></span></th>
                         <th scope="col" style="cursor: pointer" class="sortable" data-key="size">Weight <span id="arrow"></span></th>
-                        <th scope="col" data-key="owners">Owners <span id="arrow"></span></th>
                         <th scope="col" data-key="notes">Notes <span id="arrow"></span></th>
                     </tr>
                 </thead>
                 <tbody data-tableType="owner" id="ownersTabler">
-                    <tr>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                        <td>Placeholder</td>
-                    </tr>
+                    <?php foreach($data as $key=>$value): ?>
+                        <tr>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
