@@ -1,7 +1,7 @@
 <?php
     if(isset($_SESSION["error"])){
-        echo "<div class='alert alert-danger alert-dismissable' style='margin-bottom: 0'>";
-            echo $_SESSION["error"];
+        echo "<div class='alert alert-danger' style='margin-bottom: 0'>";
+            echo $_SESSION["error"] . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         echo "</div>";
     }
 ?>
